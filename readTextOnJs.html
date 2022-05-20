@@ -35,7 +35,15 @@
           // console.log(i," sum = ",sum, "matrix[i] = ",matrix[i]); 
           }
           console.log("sum = ", sum); 
-       
+
+          function hashCode(str) {
+          return str.split('').reduce((prevHash, currVal) =>
+          (((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
+          }
+
+          // Test
+          console.log("hashCode(\"Hello!\"): ", hashCode('Hello!'));
+
         }; 
         
         // reader.onerror = function () {
