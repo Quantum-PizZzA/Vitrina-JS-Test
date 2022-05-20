@@ -10,7 +10,10 @@
     <button>Чтение файла</button>
 
     <script>
-      document.querySelector("button").addEventListener("click", function () {
+      document
+      .querySelector("button")
+      .addEventListener("click", function () { 
+
         let file = document.getElementById("file").files[0];
 
         let reader = new FileReader();
@@ -18,12 +21,29 @@
         reader.readAsText(file);
 
         reader.onload = function () {
+
           console.log(reader.result);
-        };
-        reader.onerror = function () {
-          console.log(reader.error);
-        };
+          
+          let MASS = reader.result;
+
+          const matrix = MASS.split("\n")
+
+          var sum = 0;
+
+          for (let i = 0; i < matrix.length.toString() && matrix[i]!="NaN" && matrix[i]!="\r" ; i++) {
+          sum = sum + Number(matrix[i])
+          // console.log(i," sum = ",sum, "matrix[i] = ",matrix[i]); 
+          }
+          console.log("sum = ", sum); 
+       
+        }; 
+        
+        // reader.onerror = function () {
+        //   console.log(reader.error);
+        // };
       });
+
+      
     </script>
   </body>
 </html>
