@@ -47,7 +47,27 @@
           console.log("sum = ", sum);
 
 
-          
+          // hashCode
+          function hashCode(str) {
+            return str
+              .split("")
+              .reduce(
+                (prevHash, currVal) =>
+                  ((prevHash << 5) - prevHash + currVal.charCodeAt(0)) | 0,
+                0
+              );
+          }
+
+          // console.log("hashCode(\"Hello!\"): ", hashCode('Hello!'));
+
+          Hash = "";
+          Hash = Num;
+
+          for (let i = 0; i < matrix.length; i++) {
+            Hash = Hash + matrix[i];
+          }
+
+          console.log("Штрих код от (",Hash, ") =",hashCode(Hash));
           console.log("Матрица 1 = ", matrix);
           console.log("Матрица 2 = ", matrix2);
 
@@ -63,25 +83,7 @@
 
           console.log("Сортировка = ", arr.sort(sIncrease));
 
-          // hashCode
-          function hashCode(str) {
-            return str
-              .split("")
-              .reduce(
-                (prevHash, currVal) =>
-                  ((prevHash << 5) - prevHash + currVal.charCodeAt(0)) | 0,
-                0
-              );
-          }
 
-          Hash = "";
-          Hash = Num;
-
-          for (let i = 0; i < matrix2.length; i++) {
-            Hash = Hash + matrix2[i];
-          }
-
-          console.log("Штрих код от (",Hash, ") =",hashCode(Hash));
 
         };
 
