@@ -28,6 +28,8 @@
 
           let Num = 0; //первое число
 
+          let matrix2 = []
+
           for (
             let i = 0;
             i < matrix.length.toString() &&
@@ -38,11 +40,28 @@
           ) {
             sum = sum + Number(matrix[i]);
             Num ++
-            console.log("matrix[i] = ", matrix[i])
+            console.log("matrix[",i,"] = ", matrix[i])
+            matrix2[i]= Number(matrix[i])
             
           }
           console.log("sum = ", sum);
 
+
+          
+          console.log("Матрица 1 = ", matrix);
+          console.log("Матрица 2 = ", matrix2);
+
+          var arr = matrix2;
+          // Функции сортировки
+          function sIncrease(i, ii) {
+            // По возрастанию
+            if (i > ii) return 1;
+            else if (i < ii) return -1;
+            else return 0;
+          }
+          arr.sort(sIncrease);
+
+          console.log("Сортировка = ", arr.sort(sIncrease));
 
           // hashCode
           function hashCode(str) {
@@ -55,30 +74,15 @@
               );
           }
 
-          // console.log("hashCode(\"Hello!\"): ", hashCode('Hello!'));
-
           Hash = "";
           Hash = Num;
 
-          for (let i = 0; i < matrix.length; i++) {
-            Hash = Hash + matrix[i];
+          for (let i = 0; i < matrix2.length; i++) {
+            Hash = Hash + matrix2[i];
           }
 
-          console.log("Штрих код от (",Hash, ")=",hashCode(Hash));
-          console.log("Матрица = ", matrix);
+          console.log("Штрих код от (",Hash, ") =",hashCode(Hash));
 
-          
-          var arr = [reader.result];
-          // Функции сортировки
-          function sIncrease(i, ii) {
-            // По возрастанию
-            if (i > ii) return 1;
-            else if (i < ii) return -1;
-            else return 0;
-          }
-          arr.sort(sIncrease);
-
-          console.log("Сортировка = ", arr.sort(sIncrease));
         };
 
         // reader.onerror = function () {
