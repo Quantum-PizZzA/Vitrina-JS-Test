@@ -10,10 +10,7 @@
     <button>Чтение файла</button>
 
     <script>
-      document
-      .querySelector("button")
-      .addEventListener("click", function () { 
-
+      document.querySelector("button").addEventListener("click", function () {
         let file = document.getElementById("file").files[0];
 
         let reader = new FileReader();
@@ -21,37 +18,62 @@
         reader.readAsText(file);
 
         reader.onload = function () {
-
           console.log(reader.result);
-          
+
           let MASS = reader.result;
 
-          const matrix = MASS.split("\n")
+          const matrix = MASS.split("\n");
 
           var sum = 0;
 
-          for (let i = 0; i < matrix.length.toString() && matrix[i]!="NaN" && matrix[i]!="\r" ; i++) {
-          sum = sum + Number(matrix[i])
-          // console.log(i," sum = ",sum, "matrix[i] = ",matrix[i]); 
+          for (
+            let i = 0;
+            i < matrix.length.toString() &&
+            matrix[i] != "NaN" &&
+            matrix[i] != "\r";
+            i++
+          ) {
+            sum = sum + Number(matrix[i]);
+            // console.log(i," sum = ",sum, "matrix[i] = ",matrix[i]);
           }
-          console.log("sum = ", sum); 
+          console.log("sum = ", sum);
 
           function hashCode(str) {
-          return str.split('').reduce((prevHash, currVal) =>
-          (((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
+            return str
+              .split("")
+              .reduce(
+                (prevHash, currVal) =>
+                  ((prevHash << 5) - prevHash + currVal.charCodeAt(0)) | 0,
+                0
+              );
+          }
+          Hash = "";
+          Hash = matrix.length;
+          // Test
+          // console.log("hashCode(\"Hello!\"): ", hashCode(string(matrix));
+
+          for (let i = 0; i < matrix.length; i++) {
+            Hash = Hash + matrix[i];
           }
 
-          // Test
-          console.log("hashCode(\"Hello!\"): ", hashCode('Hello!'));
+          console.log(Hash);
+          console.log(matrix);
 
-        }; 
-        
+          var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+          // Функции сортировки
+          function sIncrease(i, ii) {
+            // По возрастанию
+            if (i > ii) return 1;
+            else if (i < ii) return -1;
+            else return 0;
+          }
+          arr.sort(sIncrease);
+        };
+
         // reader.onerror = function () {
         //   console.log(reader.error);
         // };
       });
-
-      
     </script>
   </body>
 </html>
