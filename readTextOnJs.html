@@ -23,6 +23,7 @@
           let sum = 0;
           let exactNumbers = 0;
           let massNumber = [];
+          let massEnter = [];
 
           // Сумма
           for (
@@ -35,6 +36,7 @@
           ) {
             sum = sum + Number(massString[i]);
             massNumber[i] = Number(massString[i]);
+            massEnter[i] = massNumber[i]
           }
 
           // Функция сортировки
@@ -52,10 +54,11 @@
               .split("")
               .reduce(
                 (prevHash, currVal) =>
-                  ((prevHash << 5) - prevHash + currVal.charCodeAt(0)) | 0,
+                ((prevHash << 5) - prevHash + currVal.charCodeAt(0)) | 0,
                 0
               );
           }
+
 
           //построение Hash
           Hash = "" + exactNumbers;
@@ -64,7 +67,7 @@
             Hash = Hash + massNumber.sort(sIncrease)[i];
           }
 
-          hashCode = hashCodeGen(Hash);
+          hashCode = Math.abs(hashCodeGen(Hash));
 
           console.log(`Добавленный файл: \n${reader.result}`);
           console.log("Сумма = ", sum);
@@ -72,7 +75,7 @@
           // console.log("Матрица massNumber = ", massNumber);
           // console.log("Сортировка = ", massNumber.sort(sIncrease));
           console.log("Точное количество чисел = ", exactNumbers);
-          console.log(`Штрих код от [Hash] = ${hashCodeGen(Hash)}`);
+          console.log(`Штрих код от [${Hash}] = ${hashCodeGen(Hash)}`);
 
           //проход по localStorage
 
@@ -84,18 +87,15 @@
 
             if (key == hashCodeGen(Hash) && dbchek == "нет данных") {
               console.log(`! ${i} ключ найден ${key} = ${hashCodeGen(Hash)}`);
-              dbchek = "есть данные";
-            } else {
-              console.log(`- ${i} проверено ${key} =? ${hashCodeGen(Hash)}`);
-              dbchek = "нет данных";
-            }
+              dbchek = "данные уже в базе";
+            } 
           }
 
             console.log(dbchek);
               if (dbchek == "нет данных") {
               console.log(`запись в localStorage = ${hashCodeGen(Hash)}`);
               //запись в localStorage
-              localStorage.setItem(hashCodeGen(Hash), massNumber);
+              localStorage.setItem(hashCodeGen(Hash), massEnter);
             }
           
         };
