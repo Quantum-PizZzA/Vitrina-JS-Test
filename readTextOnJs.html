@@ -36,7 +36,7 @@
           ) {
             sum = sum + Number(massString[i]);
             massNumber[i] = Number(massString[i]);
-            massEnter[i] = massNumber[i]
+            massEnter[i] = massNumber[i];
           }
 
           // Функция сортировки
@@ -54,11 +54,10 @@
               .split("")
               .reduce(
                 (prevHash, currVal) =>
-                ((prevHash << 5) - prevHash + currVal.charCodeAt(0)) | 0,
+                  ((prevHash << 5) - prevHash + currVal.charCodeAt(0)) | 0,
                 0
               );
           }
-
 
           //построение Hash
           Hash = "" + exactNumbers;
@@ -76,6 +75,7 @@
           // console.log("Сортировка = ", massNumber.sort(sIncrease));
           console.log("Точное количество чисел = ", exactNumbers);
           console.log(`Штрих код от [${Hash}] = ${hashCodeGen(Hash)}`);
+          document.getElementById("demo").innerHTML=sum;
 
           //проход по localStorage
 
@@ -88,16 +88,16 @@
             if (key == hashCodeGen(Hash) && dbchek == "нет данных") {
               console.log(`! ${i} ключ найден ${key} = ${hashCodeGen(Hash)}`);
               dbchek = "данные уже в базе";
-            } 
+            }
           }
 
-            console.log(dbchek);
-              if (dbchek == "нет данных") {
-              console.log(`запись в localStorage = ${hashCodeGen(Hash)}`);
-              //запись в localStorage
-              localStorage.setItem(hashCodeGen(Hash), massEnter);
-            }
-          
+          console.log(dbchek);
+          if (dbchek == "нет данных") {
+            console.log(`запись в localStorage = ${hashCodeGen(Hash)}`);
+            //запись в localStorage
+            localStorage.setItem(hashCodeGen(Hash), massEnter);
+            localStorage.setItem(-hashCodeGen(Hash), sum);
+          }
         };
 
         // reader.onerror = function () {
@@ -105,5 +105,9 @@
         // };
       });
     </script>
+
+      <p id="demo"></p>
+
+
   </body>
 </html>
