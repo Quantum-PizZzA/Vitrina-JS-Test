@@ -18,27 +18,25 @@
         reader.readAsText(file);
 
         reader.onload = function () {
-          let MASS = reader.result;
 
-          const matrix = MASS.split("\n");
+          const massString = reader.result.split("\n");
 
           let sum,
-            Num = 0;
-          let matrix2 = [];
+          exactNumbers  = 0;
+          let massNumber = [];
 
+          // Сумма
           for (
             let i = 0;
-            i < matrix.length.toString() &&
-            matrix[i] != "NaN" &&
-            matrix[i] != "\r" &&
-            matrix[i] != "";
-            i++, Num++
+            i < massString.length.toString() &&
+            massString[i] != "NaN" &&
+            massString[i] != "\r" &&
+            massString[i] != "";
+            i++, exactNumbers ++
           ) {
-            sum = sum + Number(matrix[i]);
-            matrix2[i] = Number(matrix[i]);
+            sum = sum + Number(massString[i]);
+            massNumber[i] = Number(massString[i]);
           }
-
-          var arr = matrix2;
 
           // Функции сортировки
           function sIncrease(i, ii) {
@@ -47,7 +45,7 @@
             else if (i < ii) return -1;
             else return 0;
           }
-          arr.sort(sIncrease);
+          massNumber.sort(sIncrease);
 
           // гененраци hashCode
           function hashCode(str) {        
@@ -60,20 +58,21 @@
               );
           }
 
-          Hash = "" + Num;
+          Hash = "" + exactNumbers ;
 
-          for (let i = 0; i < arr.sort(sIncrease).length; i++) {
-            Hash = Hash + arr.sort(sIncrease)[i];
+          for (let i = 0; i < massNumber.sort(sIncrease).length; i++) {
+            Hash = Hash + massNumber.sort(sIncrease)[i];
           }
-
+          
           console.log(reader.result);
           console.log("Сумма = ", sum);
-          console.log("Матрица 1 = ", matrix);
-          console.log("Матрица 2 = ", matrix2);
-          console.log("Сортировка = ", arr.sort(sIncrease));
+          console.log("Матрица строка = ", massString);
+          console.log("Матрица число = ", massNumber);
+          console.log("Сортировка = ", massNumber.sort(sIncrease));
+          console.log("Точное количество чисел = ", exactNumbers);
           console.log("Штрих код от [", Hash, "] =", hashCode(Hash));
 
-          localStorage.setItem(hashCode(Hash), matrix2);
+          localStorage.setItem(hashCode(Hash), massNumber);
         };
 
         // reader.onerror = function () {
