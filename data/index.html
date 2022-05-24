@@ -16,9 +16,26 @@
     </div>
 
     <script>
-let cod = '4607144738088'
+let eanCode = '4607144738088'
+let even = 0;
+let odd = 0;
 
-console.log(cod[1], cod.length, cod[cod.length]);
+function ean8(eanCode) {
+    for (let i = 0; i < eanCode.length; i++)
+ even = even + Number(eanCode[i]);
+ odd = odd + Number(eanCode[i+1]);
+ total = 3 * odd + even;
+ total = total % 10;
+ total = 10 - total;
+ total = total % 10;
+ return eanCode+total;
+}
+for(var i = 1000000; i<1000100; i++) {
+ console.debug(ean8(String(i)));
+}
+
+//http://barbitoff.blogspot.com/2014/03/javascript-ean-8.html
+
     </script>
 </body>
 
