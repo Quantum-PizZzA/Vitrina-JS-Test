@@ -10,27 +10,39 @@
     <input type="file" id="file" >
     <button id="read">Чтение файла</button>
     <p id="demo">Сумма</p>
-    <form action="" onsubmit="handleForm(this); return false;">
-      <p><b>Введите:</b></p>
-      <p><textarea name="massString"></textarea></p>
-      <input type="submit" />
+
+    <div class="container">
+
+      <textarea type="text" id="one"> </textarea>
+      <button id="Push">Push</button>
+  </div>
+
+    </div>
     </form>
 
     <script>
-      let e=0
-      function handleForm(e) {
-        console.log(e);
-      }
-
-      document.querySelector("#read").addEventListener("click", function () {
+      document.querySelector("#read").addEventListener("click", function Text() {
         let file = document.getElementById("file").files[0];
 
         let reader = new FileReader();
 
         reader.readAsText(file);
 
-        reader.onload = function () {
-          const massString = reader.result.split("\n");
+        reader.onload = function () { body(reader.result.split("\n"));
+        console.log(`Добавленный файл: \n${reader.result}`);
+          // const massString = reader.result.split("\n");
+        }
+        
+
+      });
+
+        document.querySelector("#Push").onclick = () => {
+        console.log(document.querySelector("#one").value);
+        body(document.querySelector("#one").value)
+
+      };
+
+      function body(massString) {
 
           let sum = 0;
           let exactNumbers = 0;
@@ -80,7 +92,7 @@
 
           hashCode = Math.abs(hashCodeGen(Hash));
 
-          console.log(`Добавленный файл: \n${reader.result}`);
+          // console.log(`Добавленный файл: \n${reader.result}`);
           console.log("Сумма = ", sum);
           // console.log("Матрица massString = ", massString);
           // console.log("Матрица massNumber = ", massNumber);
@@ -115,7 +127,7 @@
         // reader.onerror = function () {
         //   console.log(reader.error);
         // };
-      });
+      
     </script>
   </body>
 </html>
