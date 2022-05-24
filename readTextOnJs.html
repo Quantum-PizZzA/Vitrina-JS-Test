@@ -5,12 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Чтение файла</title>
   </head>
+
   <body>
-    <input type="file" id="file" />
-    <button>Чтение файла</button>
+    <input type="file" id="file" >
+    <button id="read">Чтение файла</button>
+    <p id="demo">Сумма</p>
+    <form action="" onsubmit="handleForm(this); return false;">
+      <p><b>Введите:</b></p>
+      <p><textarea name="massString"></textarea></p>
+      <input type="submit" />
+    </form>
 
     <script>
-      document.querySelector("button").addEventListener("click", function () {
+      let e=0
+      function handleForm(e) {
+        console.log(e);
+      }
+
+      document.querySelector("#read").addEventListener("click", function () {
         let file = document.getElementById("file").files[0];
 
         let reader = new FileReader();
@@ -75,7 +87,7 @@
           // console.log("Сортировка = ", massNumber.sort(sIncrease));
           console.log("Точное количество чисел = ", exactNumbers);
           console.log(`Штрих код от [${Hash}] = ${hashCodeGen(Hash)}`);
-          document.getElementById("demo").innerHTML=sum;
+          document.getElementById("demo").innerHTML = sum;
 
           //проход по localStorage
 
@@ -105,17 +117,5 @@
         // };
       });
     </script>
-
-      <p id="demo">Сумма</p>
-
-      <meta charset="utf-8">
-  <title>Текстовое поле</title>
-
- <form action="handler.php">
-  <p><b>Введите:</b></p>
-  <p><textarea name="massString"></textarea></p>
-  <p><input type="submit"></p>
-
-
   </body>
 </html>
