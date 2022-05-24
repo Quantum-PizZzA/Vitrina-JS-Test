@@ -37,8 +37,8 @@
       });
 
         document.querySelector("#Push").onclick = () => {
-        console.log(document.querySelector("#one").value);
-        body(document.querySelector("#one").value)
+        console.log(`Добавленный файл: \n${document.querySelector("#one").value.split("\n")}`);
+        body(document.querySelector("#one").value.split("\n"))
 
       };
 
