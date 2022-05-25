@@ -25,6 +25,7 @@
     </form>
 
     <script src="javascript/inn.js"></script>
+    <script src="javascript/barcode.js"></script>
 
     <script>
 
@@ -116,7 +117,7 @@
           document.getElementById("sum").innerHTML = sum;
           document.getElementById("exactNumbers").innerHTML = exactNumbers;
           document.getElementById("Hash").innerHTML = Hash;
-          document.getElementById("hashCodeGen").innerHTML = hashCodeGen(Hash);
+          document.getElementById("hashCodeGen").innerHTML = hashCode;
          
 
           //проход по localStorage
@@ -126,8 +127,8 @@
           for (let i = 0; i < localStorage.length; i++) {
             let key = localStorage.key(i);
 
-            if (key == hashCodeGen(Hash) && dbchek == "нет данных в БД") {
-              console.log(`! ${i} ключ найден ${key} = ${hashCodeGen(Hash)}`);
+            if (key == hashCode && dbchek == "нет данных в БД") {
+              console.log(`! ${i} ключ найден ${key} = ${hashCode}`);
               dbchek = "данные уже в базе";
             }
           }
@@ -136,10 +137,10 @@
 
           console.log(dbchek);
           if (dbchek == "нет данных в БД") {
-            console.log(`запись в localStorage = ${hashCodeGen(Hash)}`);
+            console.log(`запись в localStorage = ${hashCode}`);
             //запись в localStorage
-            localStorage.setItem(hashCodeGen(Hash), massEnter);
-            localStorage.setItem(-hashCodeGen(Hash), sum);
+            localStorage.setItem(hashCode, massEnter);
+            localStorage.setItem(-hashCode, sum);
           }
         };
 
