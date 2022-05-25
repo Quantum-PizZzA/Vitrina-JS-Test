@@ -9,18 +9,29 @@
   <body>
     <input type="file" id="file" >
     <button id="read">Чтение файла</button>
-    <p id="demo">Сумма</p>
+    <p>Сумма: <span id="sum"></span></p>
+    <p>Точное кол-во чисел: <span id="exactNumbers"></span></p>
+    <p>Штрих код от: <span id="Hash"></span></p> 
+    <p>Штрих код: <span id="hashCodeGen"></span></p>
+    <p>Статус БД: <span id="dbchek"></span></p>
+
+
+
+    
 
     <div class="container">
 
-      <textarea type="text" id="one"> </textarea>
+      <textarea type="text" id="one"></textarea>
       <button id="Push">Push</button>
   </div>
 
     </div>
     </form>
 
+    <script src="inn.js"></script>
+
     <script>
+
       document.querySelector("#read").addEventListener("click", function Text() {
         let file = document.getElementById("file").files[0];
 
@@ -43,6 +54,8 @@
       };
 
       function body(massString) {
+
+        // console.log(checkInn(massString));
 
           let sum = 0;
           let exactNumbers = 0;
@@ -103,7 +116,12 @@
           // console.log("Сортировка = ", massNumber.sort(sIncrease));
           console.log("Точное количество чисел = ", exactNumbers);
           console.log(`Штрих код от [${Hash}] = ${hashCodeGen(Hash)}`);
-          document.getElementById("demo").innerHTML = sum;
+          
+          document.getElementById("sum").innerHTML = sum;
+          document.getElementById("exactNumbers").innerHTML = exactNumbers;
+          document.getElementById("Hash").innerHTML = Hash;
+          document.getElementById("hashCodeGen").innerHTML = hashCodeGen(Hash);
+         
 
           //проход по localStorage
 
@@ -118,6 +136,8 @@
               dbchek = "данные уже в базе";
             }
           }
+
+          document.getElementById("dbchek").innerHTML = dbchek;
 
           console.log(dbchek);
           if (dbchek == "нет данных") {
