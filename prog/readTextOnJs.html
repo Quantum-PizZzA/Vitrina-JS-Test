@@ -15,10 +15,6 @@
     <p>Штрих код: <span id="hashCodeGen"></span></p>
     <p>Статус БД: <span id="dbchek"></span></p>
 
-
-
-    
-
     <div class="container">
 
       <textarea type="text" id="one"></textarea>
@@ -125,13 +121,12 @@
 
           //проход по localStorage
 
-          dbchek = "нет данных";
-          console.log(dbchek);
+          dbchek = "нет данных в БД";
 
           for (let i = 0; i < localStorage.length; i++) {
             let key = localStorage.key(i);
 
-            if (key == hashCodeGen(Hash) && dbchek == "нет данных") {
+            if (key == hashCodeGen(Hash) && dbchek == "нет данных в БД") {
               console.log(`! ${i} ключ найден ${key} = ${hashCodeGen(Hash)}`);
               dbchek = "данные уже в базе";
             }
@@ -140,7 +135,7 @@
           document.getElementById("dbchek").innerHTML = dbchek;
 
           console.log(dbchek);
-          if (dbchek == "нет данных") {
+          if (dbchek == "нет данных в БД") {
             console.log(`запись в localStorage = ${hashCodeGen(Hash)}`);
             //запись в localStorage
             localStorage.setItem(hashCodeGen(Hash), massEnter);
