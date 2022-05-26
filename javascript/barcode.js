@@ -26,4 +26,4 @@ function barcode(value) {
         console.log("Хороший штрихкод");
       } else {
         console.log("Плохой штрихкод");
-      }}
+      }};
