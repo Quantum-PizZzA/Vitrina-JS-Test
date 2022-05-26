@@ -1,6 +1,11 @@
 function body(massString) {
 
+    let vid = " \n";
+
     for (let i = 0; i < massString.length; i++) {
+
+      vid =  vid + " Данные: "+massString[i]+" ИНН: "+checkInn(massString[i]) +" Штрих код: "+barcode(massString[i])+" \n";
+
     console.log("Данные",massString[i],"Статус ИНН", checkInn(massString[i]));
     console.log("Данные",massString[i],"Статус штрих код", barcode(massString[i]));
   }
@@ -69,6 +74,7 @@ function body(massString) {
       document.getElementById("exactNumbers").innerHTML = exactNumbers;
       document.getElementById("Hash").innerHTML = Hash;
       document.getElementById("hashCodeGen").innerHTML = hashCode;
+      document.getElementById("vid").innerHTML = vid;
      
 
       //проход по localStorage

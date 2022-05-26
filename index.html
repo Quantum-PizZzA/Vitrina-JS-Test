@@ -22,18 +22,12 @@
       <tr><td>Штрих код:</td><td><span id="hashCodeGen"></span></td></tr> <!--ряд с ячейками тела таблицы-->
       <tr><td>Статус ИНН:</td><td><span id="dbchek"></span></td></tr> <!--ряд с ячейками тела таблицы-->
     </table>
-
-
-      <table>
-        <tr><th>Введенные данные</th><th>Статус</th></tr> <!--ряд с ячейками заголовков-->
-        <tr><td>Сумма:</td><td><span id="sum"></span></td></tr> <!--ряд с ячейками тела таблицы-->
-        <tr><td>Точное кол-во чисел:</td><td><span id="exactNumbers"></span></td></tr> <!--ряд с ячейками тела таблицы-->
-        <tr><td>Штрих код от:</td><td><span id="Hash"></span></td></tr> <!--ряд с ячейками тела таблицы-->
-        <tr><td>Штрих код:</td><td><span id="hashCodeGen"></span></td></tr> <!--ряд с ячейками тела таблицы-->
-        <tr><td>Статус ИНН:</td><td><span id="dbchek"></span></td></tr> <!--ряд с ячейками тела таблицы-->
-      </table>
-
-
+    
+    
+    <tr><td>Вывод:</td><td>
+      <pre>
+        <tr><td><span id="vid"></span></td></tr>
+      </pre>
     <div class="container">
 
       <textarea type="text" id="one"></textarea>
@@ -50,6 +44,7 @@
 
     <script>
 
+    //обработка файла
       document.querySelector("#read").addEventListener("click", function Text() {
         let file = document.getElementById("file").files[0];
 
@@ -65,6 +60,7 @@
 
       });
 
+    //обработка textarea
         document.querySelector("#Push").onclick = () => {
         console.log(`Добавленный файл: \n${document.querySelector("#one").value.split("\n")}`);
         body(document.querySelector("#one").value.split("\n"))
