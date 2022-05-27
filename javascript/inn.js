@@ -69,9 +69,9 @@ function checkInn(value) {
       10;
 
     //в этом случае мы проверяем 11 и 12 символы
-    if (checkSumOne != Number(arNumbers[10])) return fasle;
+    if (checkSumOne != Number(arNumbers[10])) return false;
     //Первая контрольная сумма не совпала с одиннадцатым символом
-    if (checkSumTwo != Number(arNumbers[11])) return fasle;
+    if (checkSumTwo != Number(arNumbers[11])) return false;
     //Вторая контрольная сумма не совпала с двенадцатым символом
     return true;
   };
