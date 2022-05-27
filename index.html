@@ -20,13 +20,12 @@
       <tr><td>Точное кол-во чисел:</td><td><span id="exactNumbers"></span></td></tr> <!--ряд с ячейками тела таблицы-->
       <tr><td>Штрих код от:</td><td><span id="Hash"></span></td></tr> <!--ряд с ячейками тела таблицы-->
       <tr><td>Штрих код:</td><td><span id="hashCodeGen"></span></td></tr> <!--ряд с ячейками тела таблицы-->
-      <tr><td>Статус ИНН:</td><td><span id="dbchek"></span></td></tr> <!--ряд с ячейками тела таблицы-->
+      <tr><td>Статус БД:</td><td><span id="dbchek"></span></td></tr> <!--ряд с ячейками тела таблицы-->
     </table>
     
     
     <tr><td>Вывод:</td><td>
-      <pre>
-        <tr><td><span id="vid"></span></td></tr>
+      <pre id="vid">
       </pre>
     <div class="container">
 
@@ -38,9 +37,9 @@
     </form>
 
     <script src="javascript/inn.js"></script>
-    <script src="javascript/barcode.js"></script>
     <script src="javascript/body.js"></script>
     <script src="javascript/table.js"></script>
+    <script src="javascript/barcode.js"></script>
 
     <script>
 
@@ -56,15 +55,12 @@
         console.log(`Добавленный файл: \n${reader.result}`);
           // const massString = reader.result.split("\n");
         }
-        
-
       });
 
     //обработка textarea
         document.querySelector("#Push").onclick = () => {
         console.log(`Добавленный файл: \n${document.querySelector("#one").value.split("\n")}`);
         body(document.querySelector("#one").value.split("\n"))
-
       };
 
     </script>
