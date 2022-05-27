@@ -2,8 +2,6 @@ function body(massString) {
   let vid = " \n";
 
   for (let i = 0; i < massString.length; i++) {
-
-    //if (checkInn(massString[i].trim()) == true && barcode(massString[i]) == true) {
     vid =
       vid +
       //" Данные: " +
@@ -13,7 +11,16 @@ function body(massString) {
       " Штрих код: " +
       barcode(massString[i]) +
       " \n";
-   // }
+
+    if (checkInn(massString[i]) == true && barcode(massString[i]) == true)
+      console.log(
+        "Данные",
+        massString[i],
+        "Является одновременно ИНН и Штрих кодом"
+      );
+
+    // console.log("Данные",massString[i],"Статус ИНН", checkInn(massString[i]));
+    // console.log("Данные",massString[i],"Статус штрих код", barcode(massString[i]));
   }
 
 
