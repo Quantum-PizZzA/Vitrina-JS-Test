@@ -1,18 +1,28 @@
 function body(massString) {
   let vid = " \n";
 
+  //Время выполнения запуск
+  var time = performance.now();
+
   for (let i = 0; i < massString.length; i++) {
+    
+    if (barcode(massString[i]) == true){
+
+      
     vid =
       vid +
       //" Данные: " +
       massString[i].trim() +
-      " ИНН: " +
-      checkInn(massString[i].trim()) +
-      " Штрих код: " +
-      barcode(massString[i]) +
+      // " ИНН: " +
+      // checkInn(massString[i].trim()) +
+      // " Штрих код: " +
+      // barcode(massString[i].trim()) +
       " \n";
+    }
   }
 
+
+  console.log(vid);
 
   let sum = 0;
   let exactNumbers = 0;
@@ -72,9 +82,14 @@ function body(massString) {
 
   document.getElementById("sum").innerHTML = sum;
   document.getElementById("exactNumbers").innerHTML = exactNumbers;
-  document.getElementById("Hash").innerHTML = Hash;
+  // document.getElementById("Hash").innerHTML = Hash;
   document.getElementById("hashCodeGen").innerHTML = hashCode;
   document.getElementById("vid").innerHTML = vid;
+
+  //Время выполнения
+  time = performance.now() - time;
+  console.log('Время выполнения = ', time/1000, "сек");
+  time = 0;
 
   //проход по localStorage
 
