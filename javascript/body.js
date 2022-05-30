@@ -11,16 +11,6 @@ function body(massString) {
       " Штрих код: " +
       barcode(massString[i]) +
       " \n";
-
-    if (checkInn(massString[i]) == true && barcode(massString[i]) == true)
-      console.log(
-        "Данные",
-        massString[i],
-        "Является одновременно ИНН и Штрих кодом"
-      );
-
-    // console.log("Данные",massString[i],"Статус ИНН", checkInn(massString[i]));
-    // console.log("Данные",massString[i],"Статус штрих код", barcode(massString[i]));
   }
 
 
