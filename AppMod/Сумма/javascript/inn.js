@@ -74,6 +74,6 @@ function checkInn(value) {
     if (checkSumTwo != Number(arNumbers[11])) return false;
     //Вторая контрольная сумма не совпала с двенадцатым символом
     return true;
-  }
+  };
   return false;
-}
+};
