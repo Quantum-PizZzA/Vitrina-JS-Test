@@ -8,11 +8,11 @@ function barcode(value) {
 
   //console.log("eanCode.length=", eanCode.length);
 
-  console.log(eanCode.length);
+  // console.log(eanCode.length);
 
   if (eanCode.length % 2 == 0) {
     eanCode = "0" + eanCode;
-    console.log(eanCode);
+    // console.log(eanCode);
   }
 
   if (eanCode.length)
@@ -26,8 +26,8 @@ function barcode(value) {
         down = down + Number(eanCode[i]);
       }
     }
-  console.log("верх =", Stringup, "=", up);
-  console.log("низ    =", Stringdown, "=", down * 3);
+  // console.log("верх =", Stringup, "=", up);
+  // console.log("низ    =", Stringdown, "=", down * 3);
   sum = down * 3 + up;
   //console.log("sum=",sum );
   if (sum % 10 == 0) {

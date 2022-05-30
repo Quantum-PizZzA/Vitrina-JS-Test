@@ -22,6 +22,22 @@
       <tr><td>Штрих код:</td><td><span id="hashCodeGen"></span></td></tr> <!--ряд с ячейками тела таблицы-->
       <tr><td>Статус БД:</td><td><span id="dbchek"></span></td></tr> <!--ряд с ячейками тела таблицы-->
     </table>
+
+<!-- 
+    <button id="createTable" onclick="createRun()">Тестирование</button>
+
+    <table>
+      <tr>
+          <th>Начальное</th>
+          <th>Конечное</th>
+      </tr>
+      <tr>
+          <td><input type="text" id="start" value="0" /></td>
+          <td><input type="text" id="end" value="100" /></td>
+      </tr>
+  </table> -->
+
+  
     
     
     <tr><td>Вывод:</td><td>
@@ -31,7 +47,6 @@
 
       <textarea type="text" id="one"></textarea>
       <button id="Push">Push</button>
-      <button id="BF">BF</button>
   </div>
 
     </div>
@@ -44,6 +59,21 @@
 
     <script>
 
+    function createRun() {
+
+                var start = parseInt(document.getElementById("start").start); 
+                var end = parseInt(document.getElementById("end").end);
+
+                for (var i=start; i<end+1 ; i++) { 
+                    // massString=String(i)
+                    // body(document.getElementById(i))
+                    value = [i]
+                    }
+                }
+
+
+
+
     //обработка файла
       document.querySelector("#read").addEventListener("click", function Text() {
         let file = document.getElementById("file").files[0];
@@ -53,14 +83,14 @@
         reader.readAsText(file);
 
         reader.onload = function () { body(reader.result.split("\n"));
-        console.log(`Добавленный файл: \n${reader.result}`);
+        // console.log(`Добавленный файл: \n${reader.result}`);
           // const massString = reader.result.split("\n");
         }
       });
 
     //обработка textarea
         document.querySelector("#Push").onclick = () => {
-        console.log(`Добавленный файл: \n${document.querySelector("#one").value.split("\n")}`);
+        // console.log(`Добавленный файл: \n${document.querySelector("#one").value.split("\n")}`);
         body(document.querySelector("#one").value.split("\n"))
       };
 

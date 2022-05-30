@@ -63,12 +63,12 @@ function body(massString) {
   hashCode = Math.abs(hashCodeGen(Hash));
 
   // console.log(`Добавленный файл: \n${reader.result}`);
-  console.log("Сумма = ", sum);
+  // console.log("Сумма = ", sum);
   // console.log("Матрица massString = ", massString);
   // console.log("Матрица massNumber = ", massNumber);
   // console.log("Сортировка = ", massNumber.sort(sIncrease));
-  console.log("Точное количество чисел = ", exactNumbers);
-  console.log(`Штрих код от [${Hash}] = ${hashCodeGen(Hash)}`);
+  // console.log("Точное количество чисел = ", exactNumbers);
+  // console.log(`Штрих код от [${Hash}] = ${hashCodeGen(Hash)}`);
 
   document.getElementById("sum").innerHTML = sum;
   document.getElementById("exactNumbers").innerHTML = exactNumbers;
@@ -84,16 +84,16 @@ function body(massString) {
     let key = localStorage.key(i);
 
     if (key == hashCode && dbchek == "нет данных в БД") {
-      console.log(`! ${i} ключ найден ${key} = ${hashCode}`);
+      // console.log(`! ${i} ключ найден ${key} = ${hashCode}`);
       dbchek = "данные уже в базе";
     }
   }
 
   document.getElementById("dbchek").innerHTML = dbchek;
 
-  console.log(dbchek);
+  // console.log(dbchek);
   if (dbchek == "нет данных в БД") {
-    console.log(`запись в localStorage = ${hashCode}`);
+    // console.log(`запись в localStorage = ${hashCode}`);
     //запись в localStorage
     localStorage.setItem(hashCode, massEnter);
     localStorage.setItem(-hashCode, sum);
