@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Чтение файла</title>
+  </head>
+
+  <body>
+    <input type="file" id="file">
+    <button id="read">Чтение файла</button>
+
+
+    <tr>
+      <td>Вывод:</td>
+      <td>
+        <pre id="vid">
+      </pre>
+        <div class="container">
+
+          <textarea type="text" id="one"></textarea>
+          <button id="Push">Push</button>
+        </div>
+
+        </div>
+        </form>
+
+
+        <script>
+
+
+          //обработка файла
+          document.querySelector("#read").addEventListener("click", function Text() {
+            let file = document.getElementById("file").files[0];
+
+            let reader = new FileReader();
+
+            reader.readAsText(file);
+
+            reader.onload = function () {
+              number13(reader.result.split("\n"));
+            }
+          });
+
+          //обработка textarea
+          document.querySelector("#Push").onclick = () => {
+            number13(document.querySelector("#one").value.split("\n"))
+          };
+
+        </script>
+  </body>
+
+</html>
+
+<script src="javascript/body.js"></script>

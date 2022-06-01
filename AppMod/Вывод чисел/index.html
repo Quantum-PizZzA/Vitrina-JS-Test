@@ -4,17 +4,6 @@
   <body>
     <button id="createTable" onclick="createRun()">Тестирование</button>
 
-    <table>
-      <tr>
-        <th>Начальное</th>
-        <th>Конечное</th>
-      </tr>
-      <tr>
-        <td><input type="text" id="start" value="1" /></td>
-        <td><input type="text" id="end" value="50000000" /></td>
-      </tr>
-    </table>
-
     <tr>
       <td>Вывод:</td>
       <td>
@@ -27,14 +16,11 @@
 
             function createRun() {
 
-              let start = parseInt(document.getElementById("start").value);
-              let end = parseInt(document.getElementById("end").value);
+              vid = [];
 
-              vid = 0;
-
-              for (let i = start; i < end + 1; i++) {
+              for (let i = 0; i < 10000000; i++) {
                 // console.log(i)            
-                vid = vid + i + " \n";
+              vid.push(i);
               }
               console.log(vid)
               // document.getElementById("vid").innerHTML = vid;
@@ -44,40 +30,3 @@
   </body>
 
 </html>
-
-<style>
-  /* внешние границы таблицы серого цвета толщиной 1px */
-  /* границы ячеек первого ряда таблицы */
-  th {
-    border: 1px solid grey;
-  }
-
-  /* границы ячеек тела таблицы */
-  td {
-    border: 1px solid grey;
-  }
-
-  button,
-  textarea,
-  table {
-    margin: 20px;
-  }
-
-
-  table {
-    border-collapse: collapse;
-    border: 2px solid black;
-  }
-
-  td {
-    padding: 5px;
-    padding-right: 30px;
-    border: 1px solid lightgray;
-  }
-
-  th {
-    padding: 10px;
-    border: 1px solid black;
-    /* стили для ячеек-заголовков */
-  }
-</style>
