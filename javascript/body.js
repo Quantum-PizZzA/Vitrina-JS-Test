@@ -11,9 +11,9 @@ function body(massString) {
         //" Данные: " +
         massString[i].trim() +
         // " ИНН: " +
-        // checkInn(massString[i].trim()) +
+        checkInn(massString[i].trim()) +
         // " Штрих код: " +
-        // barcode(massString[i].trim()) +
+        barcode(massString[i].trim()) +
         " \n";
     }
   }
