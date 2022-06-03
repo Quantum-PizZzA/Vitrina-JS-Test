@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Чтение файла</title>
+  </head> -->
+
+  <body>
+    <!-- <input type="file" id="file">
+    <button id="read">Чтение файла</button> -->
+
+    <table>
+      <tr>
+        <th>Название</th>
+        <th>Данные</th>
+      </tr>
+      <tr>
+        <td>EAN:</td>
+        <td><span id="sum"></span><input type="text" id="EAN"></td>
+      </tr>
+      <tr>
+        <td>Стоимость:</td>
+        <td><span id="exactNumbers"><input type="text" id="money"></span></td>
+      </tr>
+
+      <tr>
+        <td>Дата и время:</td>
+        <td><span id="hashCodeGen"><input type="date" id="time" value="2022-06-03"></span></td>
+      </tr>
+      <tr>
+        <td>Название:</td>
+        <td><span id="dbchek"><input type="text" id="name"></span></td>
+      </tr>
+    </table>
+
+    <button id="Push">Push</button>
+
+    <tr>
+      <td>Вывод:</td>
+      <td>
+        <pre id="vid">
+      </pre>
+        <div class="container">
+
+          <!-- <textarea type="text" id="one"></textarea> -->
+
+        </div>
+
+        </div>
+        </form>
+
+        <script src="javascript/inn.js"></script>
+        <script src="javascript/body.js"></script>
+        <script src="javascript/table.js"></script>
+        <script src="javascript/barcode.js"></script>
+
+        <script>
+
+
+          //обработка textarea
+          document.querySelector("#Push").onclick = () => {
+
+            body(document.querySelector("#name", "#time", "#money").value.split("\n"))
+          };
+
+        </script>
+  </body>
+
+</html>
+
+<style>
+  /* внешние границы таблицы серого цвета толщиной 1px */
+  /* границы ячеек первого ряда таблицы */
+  th {
+    border: 1px solid grey;
+  }
+
+  /* границы ячеек тела таблицы */
+  td {
+    border: 1px solid grey;
+  }
+
+  button,
+  textarea,
+  table {
+    margin: 20px;
+  }
+
+
+  table {
+    border-collapse: collapse;
+    border: 2px solid black;
+  }
+
+  td {
+    padding: 5px;
+    padding-right: 30px;
+    border: 1px solid lightgray;
+  }
+
+  th {
+    padding: 10px;
+    border: 1px solid black;
+    /* стили для ячеек-заголовков */
+  }
+</style>
