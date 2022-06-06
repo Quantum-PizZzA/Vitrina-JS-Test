@@ -1,12 +1,18 @@
 function body(massString) {
   let vid = " \n";
 
-  //Время выполнения запуск
-  var time = performance.now();
-
+  //URL
   const myUrl = new URL(window.location.href);
-
+  console.log(myUrl.href);
   console.log(myUrl);
+  // myUrl.hash = massString;
+  console.log(myUrl.hash);
+  hash = myUrl.hash;
+  hash = hash.split("#").join("");
+  console.log(Number(hash));
+
+  //запись в localStorage
+  localStorage.setItem(Number(hash), hash);
 
   // for (let i = 0; i < massString.length; i++) {
   //   if (barcode(massString[i]) == true) {
@@ -22,7 +28,7 @@ function body(massString) {
   //   }
   // }
 
-  console.log(vid);
+  // console.log(vid);
 
   let sum = 0;
   let exactNumbers = 0;
@@ -43,78 +49,24 @@ function body(massString) {
     massEnter[i] = massNumber[i];
   }
 
-  // Функция сортировки
-  function sIncrease(i, ii) {
-    // По возрастанию
-    if (i > ii) return 1;
-    else if (i < ii) return -1;
-    else return 0;
-  }
-  massNumber.sort(sIncrease);
-
-  // Гененраци hashCode
-  function hashCodeGen(str) {
-    return str
-      .split("")
-      .reduce(
-        (prevHash, currVal) =>
-          ((prevHash << 5) - prevHash + currVal.charCodeAt(0)) | 0,
-        0
-      );
-  }
-
-  //построение Hash
-  Hash = "" + exactNumbers;
-
-  for (let i = 0; i < massNumber.sort(sIncrease).length; i++) {
-    Hash = Hash + massNumber.sort(sIncrease)[i];
-  }
-
-  hashCode = Math.abs(hashCodeGen(Hash));
-
-  // console.log(`Добавленный файл: \n${reader.result}`);
-  // console.log("Сумма = ", sum);
-  // console.log("Матрица massString = ", massString);
-  // console.log("Матрица massNumber = ", massNumber);
-  // console.log("Сортировка = ", massNumber.sort(sIncrease));
-  // console.log("Точное количество чисел = ", exactNumbers);
-  // console.log(`Штрих код от [${Hash}] = ${hashCodeGen(Hash)}`);
-
   document.getElementById("sum").innerHTML = sum;
-  // document.getElementById("exactNumbers").innerHTML = exactNumbers;
-  // document.getElementById("Hash").innerHTML = Hash;
-  // document.getElementById("hashCodeGen").innerHTML = hashCode;
-  document.getElementById("vid").innerHTML = vid;
+  // document.getElementById("vid").innerHTML = vid;
 
-  //Время выполнения
-  time = performance.now() - time;
-  console.log("Время выполнения = ", time / 1000, "сек");
-  time = 0;
-
+  //localStorage
   //проход по localStorage
+  // dbchek = "нет данных в БД";
 
-  dbchek = "нет данных в БД";
+  // for (let i = 0; i < localStorage.length; i++) {
+  //   let key = localStorage.key(i);
 
-  for (let i = 0; i < localStorage.length; i++) {
-    let key = localStorage.key(i);
+  //   if (key == hashCode && dbchek == "нет данных в БД") {
+  //     dbchek = "данные уже в базе";
+  //   }
+  // }
 
-    if (key == hashCode && dbchek == "нет данных в БД") {
-      // console.log(`! ${i} ключ найден ${key} = ${hashCode}`);
-      dbchek = "данные уже в базе";
-    }
-  }
-
-  // document.getElementById("dbchek").innerHTML = dbchek;
-
-  // console.log(dbchek);
-  if (dbchek == "нет данных в БД") {
-    // console.log(`запись в localStorage = ${hashCode}`);
-    //запись в localStorage
-    localStorage.setItem(hashCode, massEnter);
-    localStorage.setItem(-hashCode, sum);
-  }
+  // if (dbchek == "нет данных в БД") {
+  //   //запись в localStorage
+  //   localStorage.setItem(hashCode, massEnter);
+  //   localStorage.setItem(-hashCode, sum);
+  // }
 }
-
-// reader.onerror = function () {
-//   console.log(reader.error);
-// };

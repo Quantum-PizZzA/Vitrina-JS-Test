@@ -3,29 +3,16 @@
 
 
   <body>
-    <!-- <input type="file" id="file" >
-    <button id="read">Чтение файла</button> -->
-
     <table>
-      <!-- <tr><th>Название</th><th>Данные</th></tr> ряд с ячейками заголовков -->
-      <!-- <tr><td>Сумма:</td><td> -->
-        <span id="sum"></span>
-      <!-- </td></tr> ряд с ячейками тела таблицы -->
+      <span id="sum"></span>
     </table>
 
-
-    
-    <!-- <tr><td>Вывод:</td><td> -->
-      <pre id="vid">
-      </pre>
+    <pre id="vid"> </pre>
     <div class="container">
 
       <textarea type="text" id="one"></textarea>
       <button id="Push">Push</button>
-  </div>
-
     </div>
-    </form>
 
     <script src="javascript/inn.js"></script>
     <script src="javascript/body.js"></script>
@@ -34,63 +21,32 @@
 
     <script>
 
-    // function createRun() {
-
-    //             var start = parseInt(document.getElementById("start").start); 
-    //             var end = parseInt(document.getElementById("end").end);
-
-    //             for (var i=start; i<end+1 ; i++) { 
-    //                 // massString=String(i)
-    //                 // body(document.getElementById(i))
-    //                 value = [i]
-    //                 }
-    //             }
-
-
-
-
-    //обработка файла
-      // document.querySelector("#read").addEventListener("click", function Text() {
-      //   let file = document.getElementById("file").files[0];
-
-      //   let reader = new FileReader();
-
-      //   reader.readAsText(file);
-
-      //   reader.onload = function () { body(reader.result.split("\n"));
-      //   // console.log(`Добавленный файл: \n${reader.result}`);
-      //     // const massString = reader.result.split("\n");
-      //   }
-      // });
-
-    //обработка textarea
-        document.querySelector("#Push").onclick = () => {
+      //обработка textarea
+      document.querySelector("#Push").onclick = () => {
         // console.log(`Добавленный файл: \n${document.querySelector("#one").value.split("\n")}`);
         body(document.querySelector("#one").value.split("\n"))
       };
 
-      //обработка textarea
-      // document.querySelector("#BF").onclick = () => {
-      //   console.log(`Добавленный файл: \n${document.querySelector("#one").value.split("\n")}`);
-        
-        
-      //   body(document.querySelector("#one").value.split("\n"))
-      // };
-
     </script>
   </body>
+
 </html>
 
-<style>/* внешние границы таблицы серого цвета толщиной 1px */
+<style>
+  /* внешние границы таблицы серого цвета толщиной 1px */
   /* границы ячеек первого ряда таблицы */
   th {
-     border: 1px solid grey;
+    border: 1px solid grey;
   }
+
   /* границы ячеек тела таблицы */
   td {
-     border: 1px solid grey;
+    border: 1px solid grey;
   }
-  button, textarea, table{
+
+  button,
+  textarea,
+  table {
     margin: 20px;
   }
 
@@ -98,22 +54,21 @@
   table {
     border-collapse: collapse;
     border: 2px solid black;
-}
+  }
 
-td {
+  td {
     padding: 5px;
     padding-right: 30px;
     border: 1px solid lightgray;
-}
+  }
 
-th {
+  th {
     padding: 10px;
-    border:1px solid black; /* стили для ячеек-заголовков */
-}
+    border: 1px solid black;
+    /* стили для ячеек-заголовков */
+  }
 
-textarea{
-  padding-bottom: 250px;
-}
-
-
-  </style>
+  textarea {
+    padding-bottom: 250px;
+  }
+</style>
