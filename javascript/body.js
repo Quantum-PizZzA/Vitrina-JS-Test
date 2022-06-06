@@ -4,19 +4,19 @@ function body(massString) {
   //Время выполнения запуск
   var time = performance.now();
 
-  for (let i = 0; i < massString.length; i++) {
-    if (barcode(massString[i]) == true) {
-      vid =
-        vid +
-        //" Данные: " +
-        massString[i].trim() +
-        // " ИНН: " +
-        checkInn(massString[i].trim()) +
-        // " Штрих код: " +
-        barcode(massString[i].trim()) +
-        " \n";
-    }
-  }
+  // for (let i = 0; i < massString.length; i++) {
+  //   if (barcode(massString[i]) == true) {
+  //     vid =
+  //       vid +
+  //       " Данные: " +
+  //       massString[i].trim() +
+  //       " ИНН: " +
+  //       checkInn(massString[i].trim()) +
+  //       " Штрих код: " +
+  //       barcode(massString[i].trim()) +
+  //       " \n";
+  //   }
+  // }
 
   console.log(vid);
 
@@ -77,9 +77,9 @@ function body(massString) {
   // console.log(`Штрих код от [${Hash}] = ${hashCodeGen(Hash)}`);
 
   document.getElementById("sum").innerHTML = sum;
-  document.getElementById("exactNumbers").innerHTML = exactNumbers;
+  // document.getElementById("exactNumbers").innerHTML = exactNumbers;
   // document.getElementById("Hash").innerHTML = Hash;
-  document.getElementById("hashCodeGen").innerHTML = hashCode;
+  // document.getElementById("hashCodeGen").innerHTML = hashCode;
   document.getElementById("vid").innerHTML = vid;
 
   //Время выполнения
@@ -100,7 +100,7 @@ function body(massString) {
     }
   }
 
-  document.getElementById("dbchek").innerHTML = dbchek;
+  // document.getElementById("dbchek").innerHTML = dbchek;
 
   // console.log(dbchek);
   if (dbchek == "нет данных в БД") {
