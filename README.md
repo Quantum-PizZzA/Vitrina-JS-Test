@@ -1,4 +1,4 @@
-# quantum-pizzza.github.io
+# Quantum-PizZzA.GitHub.io
 
 Веб приложение для обработки штрих кодов и ИНН.
 
