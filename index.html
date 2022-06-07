@@ -7,11 +7,16 @@
       <span id="sum"></span>
     </table>
 
-    <pre id="vid"> </pre>
+    <table>
+      <span id="re"></span>
+    </table>
+
+    <pre id="pokazatLS"> </pre>
     <div class="container">
 
       <textarea type="text" id="one"></textarea>
-      <button id="Push">Push</button>
+      <button id="send">send</button>
+      <button id="del">del</button>
     </div>
 
     <script src="javascript/inn.js"></script>
@@ -21,12 +26,51 @@
 
     <script>
 
+      //URL
+      const myUrl = new URL(window.location.href);
+
+      // myUrl.hash = massString;
+      console.log(myUrl)
+      hash = myUrl.hash;
+      hash = hash.split("#").join("");
+
+
+      let re = myUrl.hash;
+      document.getElementById("re").innerHTML = re;
+
+      //запись в localStorage
+      localStorage.setItem(localStorage.length + 1, Number(hash));
+
       //обработка textarea
-      document.querySelector("#Push").onclick = () => {
-        // console.log(`Добавленный файл: \n${document.querySelector("#one").value.split("\n")}`);
-        body(document.querySelector("#one").value.split("\n"))
+      document.querySelector("#send").onclick = () => {
+        body()
       };
 
+      //обработка сброс
+      document.querySelector("#del").onclick = () => {
+        del(document.querySelector("#del"))
+      };
+
+      let pokazatLS = " \n";
+
+      function del() {
+        localStorage.clear();
+        console.log("localStorage clear")
+        otobrazit();
+      }
+
+      function otobrazit() {
+        let pokazatLS = " \n";
+        for (let i = 0; i < localStorage.length; i++) {
+          pokazatLS += localStorage.getItem(i) + " \n";
+          document.getElementById("pokazatLS").innerHTML = pokazatLS;
+        }
+      }
+
+      document.getElementById("pokazatLS").innerHTML = pokazatLS;
+
+
+      otobrazit();
     </script>
   </body>
 
