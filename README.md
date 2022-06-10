@@ -1,6 +1,6 @@
-# Quantum-PizZzA.GitHub.io
+# Sum-JS
 
-[Quantum-PizZzA.GitHub.io](https://quantum-pizzza.github.io/)
+[Sum-JS](https://quantum-pizzza.github.io/Sum-JS/)
 
 Веб приложение для обработки штрих кодов и ИНН.
 
