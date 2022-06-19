@@ -1,3 +1,3 @@
 @echo off
-cscript.exe //Nologo 1-10.js
+cscript.exe //Nologo ean_test.js
 pause
