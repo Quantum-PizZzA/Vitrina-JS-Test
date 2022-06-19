@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Чтение файла</title>
+  </head>
+
+  <body>
+    <input type="file" id="file" >
+    <button id="read">Чтение файла</button>
+
+    <tr><td>Вывод:</td><td>
+      <pre id="vid">
+      </pre>
+    <div class="container">
+
+      <textarea type="text" id="one"></textarea>
+      <button id="Push">Push</button>
+  </div>
+
+    </div>
+    </form>
+
+    <script src="javascript/body.js"></script>
+    <script src="javascript/barcode.js"></script>
+
+    <script>
+
+
+
+    //обработка файла
+      document.querySelector("#read").addEventListener("click", function Text() {
+        let file = document.getElementById("file").files[0];
+
+        let reader = new FileReader();
+
+        reader.readAsText(file);
+
+        reader.onload = function () { body(reader.result.split("\n"));
+        // console.log(`Добавленный файл: \n${reader.result}`);
+          // const massString = reader.result.split("\n");
+        }
+      });
+
+    //обработка textarea
+        document.querySelector("#Push").onclick = () => {
+        // console.log(`Добавленный файл: \n${document.querySelector("#one").value.split("\n")}`);
+        body(document.querySelector("#one").value.split("\n"))
+      };
+
+      //обработка textarea
+      // document.querySelector("#BF").onclick = () => {
+      //   console.log(`Добавленный файл: \n${document.querySelector("#one").value.split("\n")}`);
+        
+        
+      //   body(document.querySelector("#one").value.split("\n"))
+      // };
+
+    </script>
+  </body>
+</html>
+
+<style>/* внешние границы таблицы серого цвета толщиной 1px */
+  /* границы ячеек первого ряда таблицы */
+  th {
+     border: 1px solid grey;
+  }
+  /* границы ячеек тела таблицы */
+  td {
+     border: 1px solid grey;
+  }
+  button, textarea, table{
+    margin: 20px;
+  }
+
+
+  table {
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+td {
+    padding: 5px;
+    padding-right: 30px;
+    border: 1px solid lightgray;
+}
+
+th {
+    padding: 10px;
+    border:1px solid black; /* стили для ячеек-заголовков */
+}
+  </style>
