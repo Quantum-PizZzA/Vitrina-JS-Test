@@ -78,8 +78,8 @@ function checkINN(value) {
 // var s = 2905782799 - 1;
 // var f = 2905782799 + 1;
 
-var s = 1;
-var f = 10e10;
+var s = 1000000000;
+var f = 1000000000000;
 
 for (var i = s; i <= f; i++) {
   if (checkINN(i) == 0) {
