@@ -29,15 +29,15 @@ function checkEAN(value) {
 // var s = 4607548752482 - 1;
 // var f = 4607548752482 + 1;
 
-var s = 1;
-var f = 1000000000;
+var s = 10000000;
+var f = 10000010;
 
 for (var i = s; i <= f; i++) {
   //WScript.Echo("  ");
   if (checkEAN(i) == 0) {
-    //WScript.Echo(i, " no ean ", checkEAN(i));
+    WScript.Echo(i, " no ean ", checkEAN(i));
   } else {
-    //WScript.Echo(i, " ean!!! ", checkEAN(i));
-    WScript.Echo(i);
+    WScript.Echo(i, " ean!!! ", checkEAN(i));
+    // WScript.Echo(i);
   }
 }
