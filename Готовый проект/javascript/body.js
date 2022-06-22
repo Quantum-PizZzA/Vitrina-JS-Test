@@ -8,11 +8,11 @@ function body(massString) {
     if (barcode(massString[i]) == true) {
       vid =
         vid +
-        //" Данные: " +
+        " Данные: " +
         massString[i].trim() +
-        // " ИНН: " +
+        " ИНН: " +
         checkInn(massString[i].trim()) +
-        // " Штрих код: " +
+        " Штрих код: " +
         barcode(massString[i].trim()) +
         " \n";
     }
