@@ -1,6 +1,6 @@
 # Vitrina-JS-Test
 
-##### +CMD_JS
+<!-- ##### +CMD_JS
 ##### +Only-HTML-Firebase-JS
 ##### +SQLite-Node-JS-DB
 ##### Appendix0 - ???
@@ -10,21 +10,21 @@
 ##### LocalStorage - # ?
 ##### OutputsTheCorrectEAN
 ##### Sum
-##### OnlySum
+##### OnlySum -->
 
-| +CMD_JS | CMD | JS |
+| Название | Описание | Ссылка |
 |----------------|:---------:|----------------:|
-| +CMD_JS | CENTER | RIGHT |
-| +Only-HTML-Firebase-JS | CENTER | RIGHT |
-| +SQLite-Node-JS-DB | CENTER | RIGHT |
-| Appendix0 | CENTER | RIGHT |
-| createtable | CENTER | RIGHT |
-| FinishedProject | CENTER | RIGHT |
-| javascript | CENTER | RIGHT |
-| LocalStorage | CENTER | RIGHT |
-| OutputsTheCorrectEAN | CENTER | RIGHT |
-| Sum | CENTER | RIGHT |
-| OnlySum | CENTER | RIGHT |
+| +CMD_JS | CMD_JS | error |
+| +Only-HTML-Firebase-JS | js | error |
+| +SQLite-Node-JS-DB | db | error |
+| Appendix0 | ??? | error |
+| createtable | создание таблицы | error |
+| FinishedProject | Готовый проект | error |
+| javascript | javascript | error |
+| LocalStorage | LocalStorage | error |
+| OutputsTheCorrectEAN | Корректный EAN | error |
+| Sum | Сумма | error |
+| OnlySum | Сумма | error |
 
 | LEFT | CENTER | RIGHT |
 |----------------|:---------:|----------------:|
