@@ -1,0 +1,26 @@
+{
+  "name": "sqlite3-visualizer",
+  "version": "0.1.0",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "sql.js": "^1.4.0",
+    "sqlite3": "^5.0.8"
+  },
+  "description": "Simple sqlite database visualizer using sql.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Quantum-PizZzA/SQLite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Quantum-PizZzA/SQLite/issues"
+  },
+  "homepage": "https://github.com/Quantum-PizZzA/SQLite#readme"
+}

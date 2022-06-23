@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Чтение файла</title>
+  </head>
+
+  <body>
+    <h1 id="xxx"> </h1>
+    <script>
+
+      let i = 0;
+      localStorage.clear()
+      while (i != 35900) { // когда i будет равно 0, условие станет ложным, и цикл остановится
+
+        localStorage.setItem(i, '{"EAN":"4019169390057","INN":"3327850121","Name":"Блок питания","Price":"6000","completed":false,"date":"2022 - 06 - 09","tele":"89209279050"}');
+        i++;
+
+        document.getElementById("xxx").innerHTML = localStorage.length;
+
+      }
+          // document.write(localStorage.length);
+
+    </script>
+
+
+
+  </body>
+
+</html>

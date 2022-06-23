@@ -1,0 +1,4 @@
+node_modules
+sqlitedb
+*.db
+mock.db

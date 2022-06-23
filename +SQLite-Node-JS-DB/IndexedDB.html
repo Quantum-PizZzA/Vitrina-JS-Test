@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+
+  <body>
+    <h1>indexedDB</h1>
+
+    <script>
+      let db;
+
+      let openRequest = indexedDB.open("Vitrina", 2);
+
+      openRequest.onerror = function () {
+        console.log("open db request --- onerror");
+        console.log("Ошибка при открытии БД. Код ошибки: ", event.target.errorCode);
+        db = event.target.result;
+      };
+
+      openRequest.onsuccess = function (event) {
+        console.log("open db --- onsuccess");
+        db = event.target.result;
+
+        addCase();
+        addCase();
+      };
+
+      //под раздел базы данных Games
+      openRequest.onupgradeneeded = function (event) {
+        console.log("open db --- onupgradeneeded");
+        db = event.target.result;
+        if (!db.objectStoreNames.contains("cases")) {
+          //id объекта
+          db.createObjectStore("cases", { keyPath: "id", autoIncrement: true });
+        }
+      };
+
+      // ---------------------------------------------------
+      function addCase() {
+        let transaction = db.transaction("cases", "readwrite");
+        let cases = transaction.objectStore("cases");
+
+        let case0 = {
+          //данные объекта
+          name: "ПК",
+          ean: "2000032000854",
+          inn: "33000000",
+          price: 22000,
+          data: new Date().getTime(),
+        };
+
+        let request = cases.add(case0);
+        console.dir(request);
+
+        request.onsuccess = function () {
+          console.log("Партия записана в БД");
+        };
+
+        request.onerror = function (event) {
+          console.log("Ошибка при записи в БД", event.target.error);
+        };
+      }
+
+    </script>
+
+  </body>
+
+</html>
