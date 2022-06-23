@@ -1,17 +1,5 @@
 # Vitrina-JS-Test
 
-<!-- ##### +CMD_JS
-##### +Only-HTML-Firebase-JS
-##### +SQLite-Node-JS-DB
-##### Appendix0 - ???
-##### createtable - создание таблицы 
-##### FinishedProject - готовый проект
-##### javascript - скрипты используемые коревым элементом
-##### LocalStorage - # ?
-##### OutputsTheCorrectEAN
-##### Sum
-##### OnlySum -->
-
 | Название | Описание | Ссылка |
 |----------------|:---------|:----------------|
 | +CMD_JS | CMD_JS | error |
@@ -26,10 +14,6 @@
 | Sum | Сумма | error |
 | OnlySum | Сумма | error |
 
-| LEFT | CENTER | RIGHT |
-|----------------|:---------:|----------------:|
-| По левому краю | По центру | По правому краю |
-| текст | текст | текст |
 
 [Vitrina-JS-Test](https://quantum-pizzza.github.io/Vitrina-JS-Test/)
 
