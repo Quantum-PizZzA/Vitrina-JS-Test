@@ -1,5 +1,8 @@
 <html>
 
+    <button id="read">Чтение</button>
+    <button id="write">Запись</button>
+
     <head>
         <title>indexedDB</title>
         <script>
@@ -60,11 +63,16 @@
             }
 
             //Запись
-            indexed_db_setItem("base19", "store19", 19, "xxx19");
+            document.querySelector("#write").addEventListener("click", function Text() {
+                indexed_db_setItem("base19", "store19", 21, "xxx21");
+                console.log("write");
+            });
             //Чтение
-            val = indexed_db_getItem("base19", "store19", 19);
+            document.querySelector("#read").addEventListener("click", function Text() {
+                val = indexed_db_getItem("base19", "store19", 21);
+                console.log("read val: ", val);
+            });
 
-            console.log("val: ", val);
         </script>
     </head>
 
