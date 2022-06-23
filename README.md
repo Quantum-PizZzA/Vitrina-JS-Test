@@ -12,6 +12,7 @@
 ##### Sum
 ##### OnlySum
 
+|----------------|:---------:|----------------:|
 | +CMD_JS | CENTER | RIGHT |
 | +Only-HTML-Firebase-JS | CENTER | RIGHT |
 | +SQLite-Node-JS-DB | CENTER | RIGHT |
