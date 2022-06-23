@@ -1,6 +1,18 @@
-# Sum-JS
+# Vitrina-JS-Test
 
-[Sum-JS](https://quantum-pizzza.github.io/Sum-JS/)
+#### +CMD_JS
+#### +Only-HTML-Firebase-JS
+#### +SQLite-Node-JS-DB
+#### Appendix0 -???
+#### createtable- создание таблицы 
+#### FinishedProject - готовый проект
+#### javascript - скрипты используемые коревым элементом
+#### LocalStorage - # ?
+#### OutputsTheCorrectEAN
+#### Sum
+#### OnlySum
+
+[Vitrina-JS-Test](https://quantum-pizzza.github.io/Vitrina-JS-Test/)
 
 Веб приложение для обработки штрих кодов и ИНН.
 
