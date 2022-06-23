@@ -1,0 +1,74 @@
+<html>
+
+    <head>
+        <title>indexedDB</title>
+        <script>
+            function indexed_db_setItem(base, store, key, val) {
+                openRequest = indexedDB.open(base, 1);
+                openRequest.onupgradeneeded = function () {
+                    db = openRequest.result;
+                    if (!db.objectStoreNames.contains(store))
+                        db.createObjectStore(store, { keyPath: "id" });
+                }
+                openRequest.onsuccess = function () {
+                    db = openRequest.result;
+                    db.onversionchange = function () {
+                        db.close();
+                    };
+                    transaction = db.transaction(store, "readwrite");
+                    data =
+                    {
+                        id: key,
+                        value: val,
+                        time: new Date()
+                    };
+                    request = transaction.objectStore(store).put(data);
+                    transaction.oncomplete = () => {
+                    }
+                    transaction.onerror = (event) => {
+                        document.write("<h2>ERROR: ", event.target.errorCode, "</h2>");
+                    }
+                }
+            }
+            function indexed_db_getItem(base, store, key) {
+                var id = base + ":" + store + ":" + key;
+                openRequest = indexedDB.open(base, 1);
+                openRequest.onsuccess = function () {
+                    db = openRequest.result;
+                    db.onversionchange = function () {
+                        db.close();
+                    };
+                    transaction = db.transaction([store], "readonly");
+                    request = transaction.objectStore(store).get(key);
+                    request.onsuccess = function (event) {
+                        tmp = event.target.result;
+                        if (tmp) {
+                            t = JSON.stringify(tmp);
+                            sessionStorage.setItem(id, t);
+                        } else {
+                            document.write("<h2>else</h2>");
+                        }
+                    }
+                    request.onerror = (event) => {
+
+                        document.write("<h2>ERROR: ", event.target.errorCode, "</h2>");
+                    }
+                }
+                val = sessionStorage.getItem(id);
+                sessionStorage.removeItem(id);
+                return val;
+            }
+
+            //Запись
+            indexed_db_setItem("base19", "store19", 19, "xxx19");
+            //Чтение
+            val = indexed_db_getItem("base19", "store19", 19);
+
+            console.log("val: ", val);
+        </script>
+    </head>
+
+    <body>
+    </body>
+
+</html>
