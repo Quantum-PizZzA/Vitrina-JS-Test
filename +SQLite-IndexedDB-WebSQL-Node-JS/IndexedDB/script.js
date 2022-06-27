@@ -38,38 +38,41 @@ request.onsuccess = function () {
   store.put({ id: 1, colour: "Красный", make: "Toyota" });
   store.put({ id: 2, colour: "Красный", make: "Kia" });
   store.put({ id: 3, colour: "Синий", make: "Honda" });
-  store.put({ id: 4, colour: "Серебро", make: "Subaru" });
+  store.put({ id: 4, colour: "Красный", make: "Mitsubishi" });
+  store.put({ id: 5, colour: "Золото", make: "BMW" });
+  store.put({ id: 6, colour: "Серебро", make: "Mercedes" });
 
-  // Query the data
+  //запрос по идентификатору
   const idQuery = store.get(4);
-  const colourQuery = colourIndex.getAll(["Красный"]);
-  const colourMakeQuery = makeModelIndex.get(["Синий", "Honda"]);
-
   idQuery.onsuccess = function () {
     console.log("запрос идентификатора", idQuery.result);
   };
 
+  //запрос цвета Красный
+  const colourQuery = colourIndex.getAll(["Красный"]);
   colourQuery.onsuccess = function () {
     console.log("запрос цвета", colourQuery.result);
   };
 
+  //запрос "Синий", "Honda"
+  const colourMakeQuery = makeModelIndex.get(["Синий", "Honda"]);
   colourMakeQuery.onsuccess = function () {
     console.log("запрос на создание цвета", colourMakeQuery.result);
   };
 
+  //удалить id 1
   const deleteCar = store.delete(1);
-
   deleteCar.onsuccess = function () {
     console.log("Красная Toyota была удалена");
   };
 
-  const redCarKey = colourIndex.getKey(["Красный"]);
-
+  //удалить синие машины
+  const redCarKey = colourIndex.getKey(["Синий"]);
   redCarKey.onsuccess = function () {
     const deleteCar = store.delete(redCarKey.result);
 
     deleteCar.onsuccess = function () {
-      console.log("Красная машина была удалена");
+      console.log("машина была удалена");
     };
   };
 
