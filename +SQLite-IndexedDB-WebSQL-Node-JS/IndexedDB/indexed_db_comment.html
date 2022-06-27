@@ -7,7 +7,7 @@
         <title>indexedDB</title>
         <script>
             function indexed_db_setItem(base, store, key, val) {
-                console.log("function indexed_db_setItem");
+                console.log("! ЗАПИСЬ function indexed_db_setItem (набор объектов)");
                 openRequest = indexedDB.open(base, 1);
                 // срабатывает, если на клиенте нет базы данных
                 // ...выполнить инициализацию...
@@ -16,7 +16,7 @@
                     if (!db.objectStoreNames.contains(store))
                         db.createObjectStore(store, { keyPath: "id" });
                 }
-                // продолжить работу с базой данных, используя объект db
+                // продолжить работу с базой данных, используя объект db 1
                 openRequest.onsuccess = function () {
                     db = openRequest.result;
                     //обработка 
@@ -24,6 +24,8 @@
                         db.close();
                         console.log("База данных устарела, пожалуйста, перезагрузите страницу.");
                     };
+                    //Все операции с данными в IndexedDB могут быть сделаны только внутри транзакций.
+                    //Для начала транзакции:
                     transaction = db.transaction(store, "readwrite");
                     data =
                     {
@@ -31,27 +33,32 @@
                         value: val,
                         time: new Date()
                     };
+                    // получить хранилище объектов для работы с ним
                     request = transaction.objectStore(store).put(data);
+                    //Чтобы поймать момент успешного выполнения, мы можем повесить обработчик на событие
                     transaction.oncomplete = () => {
+                        console.log("Транзакция выполнена");
                     }
+                    // ConstraintError возникает при попытке добавить объект с ключом, который уже существует
                     transaction.onerror = (event) => {
                         document.write("<h2>ERROR: ", event.target.errorCode, "</h2>");
                     }
                 }
             }
             function indexed_db_getItem(base, store, key) {
-                console.log("function indexed_db_getItem");
+                console.log("! ЧТЕНИЕ  function indexed_db_getItem (получить объект)");
                 var id = base + ":" + store + ":" + key;
                 openRequest = indexedDB.open(base, 1);
-                //обработка 
+                // продолжить работу с базой данных, используя объект db 2
                 openRequest.onsuccess = function () {
                     db = openRequest.result;
                     db.onversionchange = function () {
                         db.close();
                     };
                     transaction = db.transaction([store], "readonly");
+                    console.log("(только для чтения)")
                     request = transaction.objectStore(store).get(key);
-                    //обработка 
+                    // продолжить работу с базой данных, используя объект db 2
                     request.onsuccess = function (event) {
                         tmp = event.target.result;
                         if (tmp) {
@@ -67,6 +74,8 @@
                         document.write("<h2>ERROR: ", event.target.errorCode, "</h2>");
                     }
                 }
+                //sessionStorage ???
+                console.log("sessionStorage: ", sessionStorage.getItem(id), id)
                 val = sessionStorage.getItem(id);
                 sessionStorage.removeItem(id);
                 return val;
@@ -75,12 +84,12 @@
             //Запись
             document.querySelector("#write").addEventListener("click", function Text() {
                 indexed_db_setItem("base19", "store19", 21, "xxx21");
-                //console.log("write");
+                console.log("write");
             });
             //Чтение
             document.querySelector("#read").addEventListener("click", function Text() {
                 val = indexed_db_getItem("base19", "store19", 21);
-                //console.log("read val: ", val);
+                console.log("read val: ", val);
             });
 
         </script>
