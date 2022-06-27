@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>IndexedDB Example</title>
+
+        <script>
+
+            function indexed_db_setItem(base_name, store_name, key, val) {
+                // This works on all devices/browsers,
+                // and uses IndexedDBShim as a final fallback
+                const indexedDB = window.indexedDB
+                    || window.mozIndexedDB
+                    || window.webkitIndexedDB
+                    || window.msIndexedDB
+                    || window.shimIndexedDB;
+
+                const request = indexedDB.open(base_name, 1);// Open (or create) the database
+
+                request.onerror = function (event) {
+                };
+
+                // Create the schema on create and version upgrade
+                request.onupgradeneeded = function () {
+                    const db = request.result;
+                    const store = db.createObjectStore(store_name, { keyPath: "id" });
+                };
+
+                request.onsuccess = function () {
+                    const db = request.result;
+                    const transaction = db.transaction(store_name, "readwrite");
+                    const store = transaction.objectStore(store_name);
+
+                    data =
+                    {
+                        id: key,
+                        value: val,
+                        time: new Date()
+                    };
+                    store.put(data);
+                    //store.put({ id: key, colour: "Красный", make: "Mitsubishi" });
+
+                    //запрос по идентификатору
+                    const idQuery = store.get(4);
+                    idQuery.onsuccess = function () {
+                        //document.write(JSON.stringify(idQuery.result));
+                    };
+
+                    transaction.oncomplete = function () {
+                        db.close();
+                    };
+                };
+            }
+
+
+            function indexed_db_getItem(base_name, store_name, key) {
+                var id = base_name + ":" + store_name + ":" + key;
+
+                //document.write(id);
+
+                // This works on all devices/browsers,
+                // and uses IndexedDBShim as a final fallback
+                const indexedDB = window.indexedDB
+                    || window.mozIndexedDB
+                    || window.webkitIndexedDB
+                    || window.msIndexedDB
+                    || window.shimIndexedDB;
+
+                const request = indexedDB.open(base_name, 1);// Open (or create) the database
+
+                request.onerror = function (event) {
+                };
+
+                // Create the schema on create and version upgrade
+                request.onupgradeneeded = function () {
+                    const db = request.result;
+                    const store = db.createObjectStore(store_name, { keyPath: "id" });
+                };
+
+                request.onsuccess = function () {
+                    const db = request.result;
+                    const transaction = db.transaction(store_name, "readwrite");
+                    //const transaction = db.transaction(store_name, "readonly");
+                    const store = transaction.objectStore(store_name);
+
+                    //store.put({ id: 4, colour: "Красный", make: "Mitsubishi" });
+
+                    //запрос по идентификатору
+
+                    const idQuery = store.get(key);
+                    idQuery.onsuccess = function () {
+                        //document.write(id);
+
+                        t = JSON.stringify(idQuery.result);
+                        //document.write(t);
+                        sessionStorage.setItem(id, t);
+                        //document.write(JSON.stringify(idQuery.result));
+                    };
+
+                    transaction.oncomplete = function () {
+                        db.close();
+                    };
+                };
+                //document.write(id);
+                val = sessionStorage.getItem(id);
+                //document.write(val);
+                sessionStorage.removeItem(id);
+                return val;
+            }
+
+
+            base_name = "CarsDatabase";
+            store_name = "cars";
+
+            key = 5;
+
+            val = indexed_db_getItem(base_name, store_name, key);
+            document.write(val);
+
+        </script>
+    </head>
+
+    <body>
+    </body>
+
+</html>
