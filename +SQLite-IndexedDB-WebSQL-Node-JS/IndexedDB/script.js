@@ -42,8 +42,8 @@ request.onsuccess = function () {
 
   // Query the data
   const idQuery = store.get(4);
-  const colourQuery = colourIndex.getAll(["Red"]);
-  const colourMakeQuery = makeModelIndex.get(["Blue", "Honda"]);
+  const colourQuery = colourIndex.getAll(["Красный"]);
+  const colourMakeQuery = makeModelIndex.get(["Синий", "Honda"]);
 
   idQuery.onsuccess = function () {
     console.log("запрос идентификатора", idQuery.result);
