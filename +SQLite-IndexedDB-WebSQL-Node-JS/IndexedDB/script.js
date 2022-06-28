@@ -1,4 +1,6 @@
 // This works on all devices/browsers, and uses IndexedDBShim as a final fallback
+n = 1;
+console.log(n++, "Проверка браузера");
 const indexedDB =
   window.indexedDB ||
   window.mozIndexedDB ||
@@ -7,15 +9,18 @@ const indexedDB =
   window.shimIndexedDB;
 
 // Open (or create) the database
+console.log(n++, "Открытие создание базы");
 const request = indexedDB.open("CarsDatabase", 1);
 
 request.onerror = function (event) {
+  console.log(n++, "Обработка ошибки");
   console.error("An error occurred with IndexedDB");
   console.error(event);
 };
 
 // Create the schema on create and version upgrade
 request.onupgradeneeded = function () {
+  console.log(n++, "Создание базы");
   const db = request.result;
   const store = db.createObjectStore("cars", { keyPath: "id" });
   store.createIndex("cars_colour", ["colour"], { unique: false });
@@ -25,7 +30,7 @@ request.onupgradeneeded = function () {
 };
 
 request.onsuccess = function () {
-  console.log("База данных успешно открыта");
+  console.log(n++, "База данных успешно открыта");
 
   const db = request.result;
   const transaction = db.transaction("cars", "readwrite");
@@ -35,6 +40,7 @@ request.onsuccess = function () {
   const makeModelIndex = store.index("colour_and_make");
 
   // Add some data
+  console.log(n++, "Запись данных");
   store.put({ id: 1, colour: "Красный", make: "Toyota" });
   store.put({ id: 2, colour: "Красный", make: "Kia" });
   store.put({ id: 3, colour: "Синий", make: "Honda" });
