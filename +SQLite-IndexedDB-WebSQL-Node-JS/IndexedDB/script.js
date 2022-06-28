@@ -1,4 +1,4 @@
-// This works on all devices/browsers, and uses IndexedDBShim as a final fallback
+// Это работает на всех устройствах / браузерах и использует IndexedDBShim в качестве последнего запасного варианта
 n = 1;
 console.log(n++, "Проверка браузера");
 const indexedDB =
@@ -8,7 +8,7 @@ const indexedDB =
   window.msIndexedDB ||
   window.shimIndexedDB;
 
-// Open (or create) the database
+// Открыта (или создана) база данных
 console.log(n++, "Открытие создание базы");
 const request = indexedDB.open("CarsDatabase", 1);
 
@@ -18,7 +18,7 @@ request.onerror = function (event) {
   console.error(event);
 };
 
-// Create the schema on create and version upgrade
+// Создана схема при создании и обновлении версии
 request.onupgradeneeded = function () {
   console.log(n++, "Создание базы");
   const db = request.result;
@@ -39,7 +39,7 @@ request.onsuccess = function () {
   const colourIndex = store.index("cars_colour");
   const makeModelIndex = store.index("colour_and_make");
 
-  // Add some data
+  // Добавленые некоторые данные
   console.log(n++, "Запись данных");
   store.put({ id: 1, colour: "Красный", make: "Toyota" });
   store.put({ id: 2, colour: "Красный", make: "Kia" });
@@ -48,31 +48,31 @@ request.onsuccess = function () {
   store.put({ id: 5, colour: "Золото", make: "BMW" });
   store.put({ id: 6, colour: "Серебро", make: "Mercedes" });
 
-  //запрос по идентификатору
+  // Запрос по идентификатору
   const idQuery = store.get(4);
   idQuery.onsuccess = function () {
     console.log("запрос идентификатора", idQuery.result);
   };
 
-  //запрос цвета Красный
+  // Запрос цвета Красный
   const colourQuery = colourIndex.getAll(["Красный"]);
   colourQuery.onsuccess = function () {
     console.log("запрос цвета", colourQuery.result);
   };
 
-  //запрос "Синий", "Honda"
+  // Запрос "Синий", "Honda"
   const colourMakeQuery = makeModelIndex.get(["Синий", "Honda"]);
   colourMakeQuery.onsuccess = function () {
     console.log("запрос на создание цвета", colourMakeQuery.result);
   };
 
-  //удалить id 1
+  // Удалить id 1
   const deleteCar = store.delete(1);
   deleteCar.onsuccess = function () {
     console.log("Красная Toyota была удалена");
   };
 
-  //удалить синие машины
+  // Удалить синие машины
   const redCarKey = colourIndex.getKey(["Синий"]);
   redCarKey.onsuccess = function () {
     const deleteCar = store.delete(redCarKey.result);
