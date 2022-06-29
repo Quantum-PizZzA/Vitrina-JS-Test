@@ -1,5 +1,7 @@
 <html>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
     <details>
         <summary>Задача:</summary>
         <pre>
@@ -61,14 +63,28 @@
             }
             //firebace button 
             document.getElementById('firebace').onclick = function () {
-                eaconsole.log(ean, name, prise, new Date().getTime());
                 firebace();
+
+
             }
 
             function Deletedb() {
                 db.transaction(function (tx) {
                     tx.executeSql('DROP TABLE Showcase');
 
+                });
+            }
+
+            function firebace() {
+                db.transaction(function (tx) {
+                    tx.executeSql("SELECT  rowid, ean, name, MIN(price) AS minp, MAX(price) AS maxp FROM Showcase GROUP BY(ean) ORDER BY rowid DESC", [], function (tx, result) {
+                        let vid = "";
+                        for (let i = 0; i < result.rows.length; i++) {
+                            console.log(result.rows.item(i)['rowid'], result.rows.item(i)['ean'], result.rows.item(i)['name'], result.rows.item(i)['minp'], result.rows.item(i)['maxp'])
+                            //vid += "\n" + result.rows.item(i)['rowid'] + "\t" + result.rows.item(i)['ean'] + "\t" + '<b>' + result.rows.item(i)['name'] + '</b>' + "\t(" + result.rows.item(i)['minp'] + " - " + result.rows.item(i)['maxp'] + ")"
+                            //document.getElementById("vid").innerHTML = vid;
+                        }
+                    }, null)
                 });
             }
 
