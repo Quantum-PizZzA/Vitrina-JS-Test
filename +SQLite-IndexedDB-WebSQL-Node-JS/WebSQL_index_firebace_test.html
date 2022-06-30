@@ -44,38 +44,39 @@
 
             var s = 1;
             // var f = 100000000;
-            var f = 287530;
+            var f = 100;
 
 
             for (let i = s; i <= f; i++) {
-                // if (checkEAN(String(i)) == 0) {
-                //     // console.log(i, " no ean ", checkEAN(i));
-                // } else {
+                if (checkEAN(String(i)) == 0) {
+                    // console.log(i, " no ean ", checkEAN(i));
+                } else {
 
-                // console.log(i, " ean!!! ", checkEAN(i));
+                    //console.log(i, " ean!!! ", checkEAN(i));
 
-                let ean = i;
-                name = document.getElementById("nameinput").value;
-                prise = document.getElementById("priceinput").value;
-
-                //tx
-                db.transaction(function (tx) {
-                    //console.log(i, ean)
-                    tx.executeSql("INSERT INTO Showcase (ean, name, price, timestamp) values(?, ?, ?, ?)", [ean, name, prise, new Date().getTime()], null, null);
+                    let ean = i;
+                    name = document.getElementById("nameinput").value;
+                    prise = document.getElementById("priceinput").value;
 
                     //tx
                     db.transaction(function (tx) {
+                        //console.log(i, ean)
+                        tx.executeSql("INSERT INTO Showcase (ean, name, price, timestamp) values(?, ?, ?, ?)", [ean, name, prise, new Date().getTime()], null, null);
+                        // tx.executeSql("SELECT COUNT(*) AS c FROM Showcase", [], function (result, r) {
 
-                        tx.executeSql("SELECT * FROM ToDo", [], function (tx, result) {
-                            for (var i = 0; i < result.rows.length; i++) {
-                                document.write('<b>' + result.rows.item(i)['label'] + '</b><br />');
-                            }
-                        }, null)
+                        //tx
+                        db.transaction(function (tx) {
+
+                            tx.executeSql("SELECT * FROM ToDo", [], function (tx, result) {
+                                for (var i = 0; i < result.rows.length; i++) {
+                                    document.write('<b>' + result.rows.item(i)['label'] + '</b><br />');
+                                }
+                            }, null)
+                        });
+
                     });
 
-                });
-
-                //}
+                }
             }
             UppDate();
 
@@ -120,11 +121,11 @@
         //init
         firebase.initializeApp(firebaseConfig);
 
-        db.transaction(function (tx) {
-            tx.executeSql("SELECT COUNT(*) FROM Showcase;", [], function (tx, result) {
-                console.log(result);
-            })
-        }, null)
+        // db.transaction(function (tx) {
+        //     tx.executeSql("SELECT COUNT(*) FROM Showcase;", [], function (tx, result) {
+        //         console.log(result);
+        //     })
+        // }, null)
 
         function firebace() {
             db.transaction(function (tx) {
@@ -166,7 +167,7 @@
         }
 
 
-        db = openDatabase("VITRINA", "0.1", "Online Show Case Table", 200000);
+        db = openDatabase("TEST", "0.1", "Table", 200000);
 
         if (!db)
             document.write("<h2>ERROR OPEN</h2>");
