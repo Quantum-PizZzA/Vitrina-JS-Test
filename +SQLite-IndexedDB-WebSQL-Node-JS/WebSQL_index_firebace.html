@@ -26,109 +26,148 @@
                 </pre>
     </body>
 
-
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
 
     <head>
-        <title>VITRINA SQL</title>
-        <script>
-
-            //Ready Data
-            var ean, name, prise
-            function Ready() {
-                //ВСТАВИТЬ В витрину
-                db.transaction(function (tx) {
-
-                    ean = document.getElementById("eaninput").value;
-                    name = document.getElementById("nameinput").value;
-                    prise = document.getElementById("priceinput").value;
-
-                    //console.log(ean, name, prise, new Date().getTime());
-                    tx.executeSql("INSERT INTO Showcase (ean, name, price, timestamp) values(?, ?, ?, ?)", [ean, name, prise, new Date().getTime()], null, null);
-
-                });
-            }
-
-            document.getElementById('insert').onclick = function () {
-                Ready();
-                UppDate();
-            }
-
-            document.getElementById('del').onclick = function () {
-                Deletedb();
-                UppDate();
-            }
-
-            document.getElementById('uppdate').onclick = function () {
-                UppDate();
-            }
-            //firebace button 
-            document.getElementById('firebace').onclick = function () {
-                firebace();
-
-
-            }
-
-            function Deletedb() {
-                db.transaction(function (tx) {
-                    tx.executeSql('DROP TABLE Showcase');
-
-                });
-            }
-
-            function firebace() {
-                db.transaction(function (tx) {
-                    tx.executeSql("SELECT  rowid, ean, name, MIN(price) AS minp, MAX(price) AS maxp FROM Showcase GROUP BY(ean) ORDER BY rowid DESC", [], function (tx, result) {
-                        let vid = "";
-                        for (let i = 0; i < result.rows.length; i++) {
-                            console.log(result.rows.item(i)['rowid'], result.rows.item(i)['ean'], result.rows.item(i)['name'], result.rows.item(i)['minp'], result.rows.item(i)['maxp'])
-                            //vid += "\n" + result.rows.item(i)['rowid'] + "\t" + result.rows.item(i)['ean'] + "\t" + '<b>' + result.rows.item(i)['name'] + '</b>' + "\t(" + result.rows.item(i)['minp'] + " - " + result.rows.item(i)['maxp'] + ")"
-                            //document.getElementById("vid").innerHTML = vid;
-                        }
-                    }, null)
-                });
-            }
-
-            // //СОЗДАТЬ витрину ТАБЛИЦЫ
-            // function (tx, error) {
-            //     tx.executeSql("CREATE TABLE Showcase (id REAL UNIQUE, ean INT, name TEXT, price REAL, timestamp REAL)", [], null, null);
-            // }
-
-            db = openDatabase("VITRINA", "0.1", "Online Show Case Table", 200000);
-
-            if (!db)
-                document.write("<h2>ERROR OPEN</h2>");
-
-            //ВЫБЕРИТЕ СЧИТАТЬ КАК c ИЗ Showcase
-            db.transaction(function (tx) {
-                tx.executeSql("SELECT COUNT(*) AS c FROM Showcase", [], function (result, r) {
-
-                },
-                    //СОЗДАТЬ витрину ТАБЛИЦЫ
-                    function (tx, error) {
-                        tx.executeSql("CREATE TABLE Showcase (id REAL UNIQUE, ean INT, name TEXT, price REAL, timestamp REAL)", [], null, null);
-                    })
-            });
-
-
-            //ВЫБЕРИТЕ ean, название, MIN(цена) В КАЧЕСТВЕ minp, MAX(цена) В КАЧЕСТВЕ maxp ИЗ ГРУППЫ Showcase ПО(ean)
-
-            function UppDate() {
-                db.transaction(function (tx) {
-                    tx.executeSql("SELECT  rowid, ean, name, MIN(price) AS minp, MAX(price) AS maxp FROM Showcase GROUP BY(ean) ORDER BY rowid DESC", [], function (tx, result) {
-                        let vid = "";
-                        for (let i = 0; i < result.rows.length; i++) {
-                            // document.write('<b>' + result.rows.item(i)['ean'] + '</b> ' + result.rows.item(i)['name'] + ' (' + result.rows.item(i)['minp'] + ' - ' + result.rows.item(i)['maxp'] + ')<br />');
-                            vid += "\n" + result.rows.item(i)['rowid'] + "\t" + result.rows.item(i)['ean'] + "\t" + '<b>' + result.rows.item(i)['name'] + '</b>' + "\t(" + result.rows.item(i)['minp'] + " - " + result.rows.item(i)['maxp'] + ")"
-                            document.getElementById("vid").innerHTML = vid;
-                        }
-                    }, null)
-                });
-            }
-            UppDate();
-
-
-        </script>
     </head>
+
+    <title>VITRINA SQL</title>
+    <script id="MainScript">
+
+        //Ready Data
+        var ean, name, prise
+        function Ready() {
+            //ВСТАВИТЬ В витрину
+            db.transaction(function (tx) {
+
+                ean = document.getElementById("eaninput").value;
+                name = document.getElementById("nameinput").value;
+                prise = document.getElementById("priceinput").value;
+
+                //console.log(ean, name, prise, new Date().getTime());
+                tx.executeSql("INSERT INTO Showcase (ean, name, price, timestamp) values(?, ?, ?, ?)", [ean, name, prise, new Date().getTime()], null, null);
+
+            });
+        }
+
+        document.getElementById('insert').onclick = function () {
+            Ready();
+            UppDate();
+        }
+
+        document.getElementById('del').onclick = function () {
+            Deletedb();
+            UppDate();
+        }
+
+        document.getElementById('uppdate').onclick = function () {
+            UppDate();
+        }
+        //firebace button 
+        document.getElementById('firebace').onclick = function () {
+            firebace();
+        }
+
+        function Deletedb() {
+            db.transaction(function (tx) {
+                tx.executeSql('DROP TABLE Showcase');
+
+            });
+        }
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyAjT9t5YL0mSsPxyKAVLDJR2ZRhcms1DIw",
+            authDomain: "html-js-firebase.firebaseapp.com",
+            databaseURL: "https://html-js-firebase-default-rtdb.firebaseio.com",
+            projectId: "html-js-firebase",
+            storageBucket: "html-js-firebase.appspot.com",
+            messagingSenderId: "135572650662",
+            appId: "1:135572650662:web:03742e1578aa8b89509267"
+        }
+
+        //init
+        firebase.initializeApp(firebaseConfig);
+
+        function firebace() {
+            db.transaction(function (tx) {
+                tx.executeSql("SELECT  rowid, ean, name, MIN(price) AS minp, MAX(price) AS maxp FROM Showcase GROUP BY(ean) ORDER BY rowid DESC", [], function (tx, result) {
+                    let vid = "";
+
+                    for (let i = 0; i < result.rows.length; i++) {
+
+                        console.log(result.rows.item(i)['rowid'], result.rows.item(i)['ean'], result.rows.item(i)['name'], result.rows.item(i)['minp'], result.rows.item(i)['maxp'])
+
+                        //Ready Data
+                        var // INN = inn,
+                            EAN = result.rows.item(i)['ean'],
+                            Name = result.rows.item(i)['name'],
+                            Price = result.rows.item(i)['minp'],
+                            Price2 = result.rows.item(i)['maxp']
+                        // function Ready() {
+                        //     EAN = document.getElementById("eanbox").value;
+                        //     INN = document.getElementById("innbox").value;
+                        //     Name = document.getElementById("namebox").value;
+                        //     Price = document.getElementById("pricebox").value;
+                        // }
+
+
+
+                        //Insert Process
+                        firebase.database().ref("HTML-JS-Firebase/Anonymous/" + EAN).set({
+                            EAN: EAN,
+                            // INN: INN,
+                            Name: Name,
+                            Price: Price,
+                        })
+
+
+
+                    }
+                }, null)
+            });
+        }
+
+
+        db = openDatabase("VITRINA", "0.1", "Online Show Case Table", 200000);
+
+        if (!db)
+            document.write("<h2>ERROR OPEN</h2>");
+
+        //ВЫБЕРИТЕ СЧИТАТЬ КАК c ИЗ Showcase
+        db.transaction(function (tx) {
+            tx.executeSql("SELECT COUNT(*) AS c FROM Showcase", [], function (result, r) {
+
+            },
+                //СОЗДАТЬ витрину ТАБЛИЦЫ
+                function (tx, error) {
+                    tx.executeSql("CREATE TABLE Showcase (id REAL UNIQUE, ean INT, name TEXT, price REAL, timestamp REAL)", [], null, null);
+                })
+        });
+
+
+        //ВЫБЕРИТЕ ean, название, MIN(цена) В КАЧЕСТВЕ minp, MAX(цена) В КАЧЕСТВЕ maxp ИЗ ГРУППЫ Showcase ПО(ean)
+
+        function UppDate() {
+            db.transaction(function (tx) {
+                tx.executeSql("SELECT  rowid, ean, name, MIN(price) AS minp, MAX(price) AS maxp FROM Showcase GROUP BY(ean) ORDER BY rowid DESC", [], function (tx, result) {
+                    let vid = "";
+                    for (let i = 0; i < result.rows.length; i++) {
+                        // document.write('<b>' + result.rows.item(i)['ean'] + '</b> ' + result.rows.item(i)['name'] + ' (' + result.rows.item(i)['minp'] + ' - ' + result.rows.item(i)['maxp'] + ')<br />');
+                        vid += "\n" + result.rows.item(i)['rowid'] + "\t" + result.rows.item(i)['ean'] + "\t" + '<b>' + result.rows.item(i)['name'] + '</b>' + "\t(" + result.rows.item(i)['minp'] + " - " + result.rows.item(i)['maxp'] + ")"
+                        document.getElementById("vid").innerHTML = vid;
+                    }
+                }, null)
+            });
+        }
+        UppDate();
+
+
+    </script>
+
+
+
 
 
 
