@@ -1,0 +1,141 @@
+<html>
+
+    <details>
+        <summary>Задача:</summary>
+        <pre>
+            Web SQL -> VITRINA -> Showcase
+            Товар Цена (min - max)
+            </pre>
+    </details>
+
+    <body>
+        EAN <input id="eaninput" type="text"></input>
+        Name <input id="nameinput" type="text"></input>
+        Price <input id="priceinput" type="text"></input>
+
+        <button id="insert">INSERT</button>
+        <button id="del">DEL</button>
+        <button id="uppdate">uppdate</button>
+        <br>
+        <td>Вывод:</td>
+        <td>
+            <pre id="vid">
+                </pre>
+    </body>
+
+
+
+    <head>
+        <title>VITRINA SQL</title>
+        <script src="../javascript/ean.js"></script>
+        <script>
+
+            //Ready Data
+            var ean, name, prise
+            function Ready() {
+                //ВСТАВИТЬ В витрину
+                db.transaction(function (tx) {
+
+                    ean = document.getElementById("eaninput").value;
+                    name = document.getElementById("nameinput").value;
+                    prise = document.getElementById("priceinput").value;
+
+                    max = 100000000;
+                    j = 1;
+                    d = Math.floor(max / 100)
+
+                    for (i = 0; i < max; i++) {
+
+                        if (i % d == 0) { console.log(String(j), " %"); j++ }
+
+                        if (checkEAN(String(i)) == 0) {
+                            // console.log(i, " no ean ", checkEAN(i));
+                        } else {
+                            //console.log(i, " ean!!! ", checkEAN(i));
+                            tx.executeSql("INSERT INTO Showcase (ean, name, price, timestamp) values(?, ?, ?, ?)", [i, name, prise, new Date().getTime()], null, null);
+                        }
+                    }
+
+                });
+            }
+
+            document.getElementById('insert').onclick = function () {
+                Ready();
+                UppDate();
+            }
+
+            document.getElementById('del').onclick = function () {
+                Deletedb();
+                UppDate();
+            }
+
+            document.getElementById('uppdate').onclick = function () {
+                UppDate();
+            }
+
+            function Deletedb() {
+                db.transaction(function (tx) {
+                    tx.executeSql('DROP TABLE Showcase');
+
+                });
+            }
+
+            // //СОЗДАТЬ витрину ТАБЛИЦЫ
+            // function (tx, error) {
+            //     tx.executeSql("CREATE TABLE Showcase (id REAL UNIQUE, ean INT, name TEXT, price REAL, timestamp REAL)", [], null, null);
+            // }
+
+            db = openDatabase("VITRINA", "0.1", "Online Show Case Table", 200000);
+
+            if (!db)
+                document.write("<h2>ERROR OPEN</h2>");
+
+            //ВЫБЕРИТЕ СЧИТАТЬ КАК c ИЗ Showcase
+            db.transaction(function (tx) {
+                tx.executeSql("SELECT COUNT(*) AS c FROM Showcase", [], function (result, r) {
+
+                },
+                    //СОЗДАТЬ витрину ТАБЛИЦЫ
+                    function (tx, error) {
+                        tx.executeSql("CREATE TABLE Showcase (id REAL UNIQUE, ean INT, name TEXT, price REAL, timestamp REAL)", [], null, null);
+                    })
+            });
+
+
+            //ВЫБЕРИТЕ ean, название, MIN(цена) В КАЧЕСТВЕ minp, MAX(цена) В КАЧЕСТВЕ maxp ИЗ ГРУППЫ Showcase ПО(ean)
+
+            function UppDate() {
+                db.transaction(function (tx) {
+                    //tx.executeSql("SELECT  rowid, ean, name, MIN(price) AS minp, MAX(price) AS maxp FROM Showcase GROUP BY(ean) ORDER BY rowid DESC", [], function (tx, result) {
+                    tx.executeSql("SELECT COUNT(*) AS c FROM Showcase", [], function (tx, result) {
+                        let vid = "";
+                        // for (let i = 0; i < result.rows.length; i++) {
+                        //     // document.write('<b>' + result.rows.item(i)['ean'] + '</b> ' + result.rows.item(i)['name'] + ' (' + result.rows.item(i)['minp'] + ' - ' + result.rows.item(i)['maxp'] + ')<br />');
+                        vid += result.rows.item(0)['c'];
+                        document.getElementById("vid").innerHTML = vid;
+                        // }
+                    }, null)
+                });
+            }
+            UppDate();
+
+
+        </script>
+    </head>
+
+
+
+</html>
+
+<style>
+    table,
+    td {
+        border: 1px solid #333;
+    }
+
+    thead,
+    tfoot {
+        background-color: #333;
+        color: #fff;
+    }
+</style>
