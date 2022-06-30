@@ -1,4 +1,4 @@
-export function checkEAN(value) {
+function checkEAN(value) {
   let eanCode = value;
 
   let up = 0;
