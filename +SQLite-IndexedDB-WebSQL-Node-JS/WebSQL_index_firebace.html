@@ -62,11 +62,11 @@
                 UppDate();
             }
             //firebace button 
-            // document.getElementById('firebace').onclick = function () {
-            //     firebace();
+            document.getElementById('firebace').onclick = function () {
+                firebace();
 
 
-            // }
+            }
 
             function Deletedb() {
                 db.transaction(function (tx) {
@@ -75,18 +75,18 @@
                 });
             }
 
-            // function firebace() {
-            //     db.transaction(function (tx) {
-            //         tx.executeSql("SELECT  rowid, ean, name, MIN(price) AS minp, MAX(price) AS maxp FROM Showcase GROUP BY(ean) ORDER BY rowid DESC", [], function (tx, result) {
-            //             let vid = "";
-            //             for (let i = 0; i < result.rows.length; i++) {
-            //                 console.log(result.rows.item(i)['rowid'], result.rows.item(i)['ean'], result.rows.item(i)['name'], result.rows.item(i)['minp'], result.rows.item(i)['maxp'])
-            //                 //vid += "\n" + result.rows.item(i)['rowid'] + "\t" + result.rows.item(i)['ean'] + "\t" + '<b>' + result.rows.item(i)['name'] + '</b>' + "\t(" + result.rows.item(i)['minp'] + " - " + result.rows.item(i)['maxp'] + ")"
-            //                 //document.getElementById("vid").innerHTML = vid;
-            //             }
-            //         }, null)
-            //     });
-            // }
+            function firebace() {
+                db.transaction(function (tx) {
+                    tx.executeSql("SELECT  rowid, ean, name, MIN(price) AS minp, MAX(price) AS maxp FROM Showcase GROUP BY(ean) ORDER BY rowid DESC", [], function (tx, result) {
+                        let vid = "";
+                        for (let i = 0; i < result.rows.length; i++) {
+                            console.log(result.rows.item(i)['rowid'], result.rows.item(i)['ean'], result.rows.item(i)['name'], result.rows.item(i)['minp'], result.rows.item(i)['maxp'])
+                            //vid += "\n" + result.rows.item(i)['rowid'] + "\t" + result.rows.item(i)['ean'] + "\t" + '<b>' + result.rows.item(i)['name'] + '</b>' + "\t(" + result.rows.item(i)['minp'] + " - " + result.rows.item(i)['maxp'] + ")"
+                            //document.getElementById("vid").innerHTML = vid;
+                        }
+                    }, null)
+                });
+            }
 
             // //СОЗДАТЬ витрину ТАБЛИЦЫ
             // function (tx, error) {
