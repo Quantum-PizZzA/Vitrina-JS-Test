@@ -108,6 +108,7 @@
                 db.transaction(function (tx) {
                     //tx.executeSql("SELECT  rowid, ean, name, MIN(price) AS minp, MAX(price) AS maxp FROM Showcase GROUP BY(ean) ORDER BY rowid DESC", [], function (tx, result) {
                     tx.executeSql("SELECT COUNT(*) AS c FROM Showcase", [], function (tx, result) {
+                        // tx.executeSql("SELECT SUM(ean) AS c FROM Showcase", [], function (tx, result) {
                         let vid = "";
                         // for (let i = 0; i < result.rows.length; i++) {
                         //     // document.write('<b>' + result.rows.item(i)['ean'] + '</b> ' + result.rows.item(i)['name'] + ' (' + result.rows.item(i)['minp'] + ' - ' + result.rows.item(i)['maxp'] + ')<br />');
