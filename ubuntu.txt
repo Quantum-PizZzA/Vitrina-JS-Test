@@ -1,0 +1,29 @@
+2022
+pizzza@pizzza-vm:~$ sudo mkdir /mnt/hgfs
+pizzza@pizzza-vm:~$ sudo vMhgfs-fuse .host; /mnt/hgfs -o allow-other -o uid=1000
+sudo: vMhgfs-fuse: команда не найдена
+bash: /mnt/hgfs: Это каталог
+pizzza@pizzza-vm:~$ sudo vMhgfs-fuse .host; /mnt/hgfs -o allow-other -o uid=1000
+sudo: vMhgfs-fuse: команда не найдена
+bash: /mnt/hgfs: Это каталог
+pizzza@pizzza-vm:~$ sudo mkdir /mnt/hgfs
+mkdir: невозможно создать каталог «/mnt/hgfs»: Файл существует
+pizzza@pizzza-vm:~$ sudo mkdir /2022
+pizzza@pizzza-vm:~$ sudo mkdir /2022
+mkdir: невозможно создать каталог «/2022»: Файл существует
+pizzza@pizzza-vm:~$ sudo mkdir /mnt/hgfs
+mkdir: невозможно создать каталог «/mnt/hgfs»: Файл существует
+pizzza@pizzza-vm:~$ sudo mkdir /mnt/hgfs
+mkdir: невозможно создать каталог «/mnt/hgfs»: Файл существует
+pizzza@pizzza-vm:~$ vmware-hgfsclient
+2022
+pizzza@pizzza-vm:~$ cd
+pizzza@pizzza-vm:~$ cd /
+pizzza@pizzza-vm:/$ mc
+
+pizzza@pizzza-vm:/$ sudo vmhgfs-fuse .hOSt; /mnt/hgfs -o allow-other -o uid=1000
+fuse: bad mount point `.hOSt': No such file or directory
+bash: /mnt/hgfs: Это каталог
+pizzza@pizzza-vm:/$ ^C
+pizzza@pizzza-vm:/$ sudo vmhgfs-fuse .host: /mnt/hgfs -o allow_other -o uid=1000
+pizzza@pizzza-vm:/$ sudo vmhgfs-fuse .host: /mnt/hgfs -o allow_other -o uid=1000
