@@ -4,8 +4,8 @@
 |----------------|:---------|:----------------|
 | +CMD_JS | CMD_JS | error |
 | +Only-HTML-Firebase-JS | js | error |
-| +SQLite-IndexedDB-WebSQL-Node-JS | db | [WebSQL (min - max)](https://quantum-pizzza.github.io/Vitrina-JS-Test/+SQLite-IndexedDB-WebSQL-Node-JS/WebSQL_index.html) |
-| +SQLite-IndexedDB-WebSQL-Node-JS | db | [WebSQL firebace (min - max)](https://quantum-pizzza.github.io/Vitrina-JS-Test/+SQLite-IndexedDB-WebSQL-Node-JS/WebSQL_index.html) |
+| WebSQL | db | [WebSQL (min - max)](https://quantum-pizzza.github.io/Vitrina-JS-Test/+SQLite-IndexedDB-WebSQL-Node-JS/WebSQL_index.html) |
+| firebace | db | [WebSQL firebace (min - max)](https://quantum-pizzza.github.io/Vitrina-JS-Test/+SQLite-IndexedDB-WebSQL-Node-JS/WebSQL_index.html) |
 | Appendix0 | ??? | error |
 | createtable | создание таблицы | error |
 | FinishedProject | Готовый проект | error |
