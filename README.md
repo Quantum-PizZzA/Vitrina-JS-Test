@@ -2,7 +2,7 @@
 
 | Название | Описание | Ссылка |
 |----------------|:---------|:----------------|
-| +CMD_JS | CMD_JS | CMD |
+| +CMD_JS | CMD_JS | [CMD](https://quantum-pizzza.github.io/Vitrina-JS-Test/+CMD_JS/ean_test/ean_release.cmd)  |
 | LocalStorage | js | [LocalStorage](https://quantum-pizzza.github.io/Vitrina-JS-Test/+Only-HTML-Firebase-JS/index_LocalStorage.html)  |
 | WebSQL | db | [WebSQL (min - max)](https://quantum-pizzza.github.io/Vitrina-JS-Test/+SQLite-IndexedDB-WebSQL-Node-JS/WebSQL_index.html) |
 | WebSQL -> Firebace | db | [WebSQL Firebace (min - max)](https://quantum-pizzza.github.io/Vitrina-JS-Test/+SQLite-IndexedDB-WebSQL-Node-JS/WebSQL_index.html) |
