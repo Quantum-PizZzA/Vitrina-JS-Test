@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,6 +8,7 @@
     <title>Simple IndexedDB</title>
     <link rel="stylesheet" href="main.css" />
   </head>
+
   <body>
     <header>
       <h1>IndexedDB</h1>
@@ -41,32 +43,26 @@
       <form name="whiskeyForm">
         <fieldset>
           <p>
-            <label for="name">Whiskey: </label>
+            <label for="name">Виски: </label>
             <input type="text" id="name" placeholder="Whiskey Name" required />
           </p>
           <p>
-            <label for="country">Country of Origin: </label>
+            <label for="country">Cтрана происхождения:</label>
             <input type="text" id="country" value="" required />
           </p>
           <p>
-            <label for="age">Years Old: </label>
-            <input
-              type="text"
-              inputmode="numeric"
-              pattern="[\d]+"
-              id="age"
-              required
-            />
+            <label for="age">Возраст: </label>
+            <input type="text" inputmode="numeric" pattern="[\d]+" id="age" required />
           </p>
           <p>
             <label for="isOwned">Owned: </label>
             <input type="checkbox" id="isOwned" value="yes" />
           </p>
           <p>
-            <button id="btnAdd">Add Whiskey</button>
-            <button id="btnUpdate">Update Whiskey</button>
-            <button id="btnDelete">Delete Whiskey</button>
-            <button id="btnClear">Reset Form</button>
+            <button id="btnAdd">Добавьте Виски</button>
+            <button id="btnUpdate">Обновить Виски</button>
+            <button id="btnDelete">Удалить Виски</button>
+            <button id="btnClear">Отчистка формы</button>
           </p>
         </fieldset>
       </form>
@@ -81,4 +77,5 @@
 
     <script type="module" src="app.js"></script>
   </body>
+
 </html>
