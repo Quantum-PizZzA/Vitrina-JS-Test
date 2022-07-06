@@ -88,12 +88,20 @@
             });
             //Чтение
             document.querySelector("#read").addEventListener("click", function Text() {
+                val = "Пусто";
                 val = indexed_db_getItem("base19", "store19", 21);
+
                 console.log("read val: ", val);
+                document.getElementById("val").innerHTML = val;
+
             });
+
 
         </script>
     </head>
+
+    <pre id="val">
+    </pre>
 
     <body>
     </body>
