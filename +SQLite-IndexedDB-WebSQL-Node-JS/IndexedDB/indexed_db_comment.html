@@ -1,5 +1,12 @@
 <html>
 
+    <details>
+        <summary>Задача:</summary>
+        <pre>
+            Чтение запись IndexedDB по кнопке (комментарии html)
+            </pre>
+    </details>
+
     <button id="read">Чтение</button>
     <button id="write">Запись</button>
 
@@ -7,7 +14,8 @@
         <title>indexedDB</title>
         <script>
             function indexed_db_setItem(base, store, key, val) {
-                console.log("! ЗАПИСЬ function indexed_db_setItem (набор объектов)");
+                // Подключение к базе данных
+                console.log("! ЗАПИСЬ Подключение к базе данных");
                 openRequest = indexedDB.open(base, 1);
                 // срабатывает, если на клиенте нет базы данных
                 // ...выполнить инициализацию...
