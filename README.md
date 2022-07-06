@@ -6,7 +6,7 @@
 | LocalStorage | js | [LocalStorage](https://quantum-pizzza.github.io/Vitrina-JS-Test/+Only-HTML-Firebase-JS/index_LocalStorage.html)  |
 | WebSQL | db | [WebSQL (min - max)](https://quantum-pizzza.github.io/Vitrina-JS-Test/+SQLite-IndexedDB-WebSQL-Node-JS/WebSQL_index.html) |
 | WebSQL -> Firebace | db | [WebSQL Firebace (min - max)](https://quantum-pizzza.github.io/Vitrina-JS-Test/+SQLite-IndexedDB-WebSQL-Node-JS/WebSQL_index.html) |
-| IndexedDB | db | [IndexedDB](https://quantum-pizzza.github.io/Vitrina-JS-Test/+SQLite-IndexedDB-WebSQL-Node-JS/IndexedDB/idb_002.html) |
+| IndexedDB | db | [IndexedDB](https://quantum-pizzza.github.io/Vitrina-JS-Test/+SQLite-IndexedDB-WebSQL-Node-JS/IndexedDB/indexed_db_getItem.html) |
 | Appendix0 | ??? | error |
 | createtable | создание таблицы | error |
 | FinishedProject | Готовый проект | error |
