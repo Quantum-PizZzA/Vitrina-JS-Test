@@ -7,6 +7,7 @@
 | WebSQL | db | [WebSQL (min - max)](https://quantum-pizzza.github.io/Vitrina-JS-Test/+SQLite-IndexedDB-WebSQL-Node-JS/WebSQL_index.html) |
 | WebSQL -> Firebace | db | [WebSQL Firebace (min - max)](https://quantum-pizzza.github.io/Vitrina-JS-Test/+SQLite-IndexedDB-WebSQL-Node-JS/WebSQL_index.html) |
 | IndexedDB | db | [IndexedDB](https://quantum-pizzza.github.io/Vitrina-JS-Test/+SQLite-IndexedDB-WebSQL-Node-JS/IndexedDB/indexed_db_getItem.html) |
+| IndexedDB | db | [Code](https://quantum-pizzza.github.io/Vitrina-JS-Test/+SQLite-IndexedDB-WebSQL-Node-JS/code) |
 | Appendix0 | ??? | error |
 | createtable | создание таблицы | error |
 | FinishedProject | Готовый проект | error |
