@@ -2,7 +2,7 @@ function Insert() {
   box = document.getElementById("box").value;
 
   let arr = box.split(" ");
-  //console.log(arr);
+  console.log(arr[0]);
 
   var ean = arr[0];
   var inn = arr[1];
@@ -14,17 +14,18 @@ function Insert() {
     INN: inn,
     Price: price,
     Name: name,
-    Date: Date.now()
+    Date: Date.now(),
+    Date2: new Date()
   };
 
-  hashCode = ean;
   dbchek = "нет данных в БД";
 
-  console.log(`${dbchek} = [${hashCode}]`);
+  console.log(`${dbchek} = [${Date.now()}]`);
 
   if (dbchek == "нет данных в БД") {
-    console.log(`запись в localStorage = ${hashCode}`);
-    // localStorage.setItem(new Date(), JSON.stringify(valueJSON));
+    console.log(`запись в localStorage = ${Date.now()}`);
     localStorage.setItem(Date.now(), JSON.stringify(valueJSON));
   }
 }
+
+// localStorage.setItem(new Date(), JSON.stringify(valueJSON));

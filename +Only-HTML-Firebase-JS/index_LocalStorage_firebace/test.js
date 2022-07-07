@@ -36,18 +36,21 @@ function Test() {
       // WScript.Echo(i, " no ean ", checkEAN(i));
     } else {
       // WScript.Echo(i, " ean!!! ", checkEAN(i));
-      J = {
+      valueJSONtest = {
         EAN: i,
         INN: Math.floor(Math.random() * (maxinn - mininn + 1)) + mininn,
         Price:
           Math.floor(Math.random() * (maxPrice - minPrice + 10)) + minPrice,
         Name: word,
-        Date: Date.now()
-        // Date2: new Date()
+        Date: Date.now(),
+        Date2: new Date()
       };
     }
 
-    localStorage.setItem(Date.now() + localStorage.length, JSON.stringify(J));
+    localStorage.setItem(
+      Date.now() + localStorage.length,
+      JSON.stringify(valueJSONtest)
+    );
   }
 }
 

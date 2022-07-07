@@ -36,6 +36,11 @@
                 </td>
             </tr>
 
+            <input id="boxsearch" type="text"></input>
+            <button id="search">Поиск</button>
+            <pre id="disSearch">
+            </pre>
+
             <tr>
                 <td>Вывод, отображено 20 последних элементов:</td>
             </tr>
@@ -63,6 +68,7 @@
     <script src="del.js"></script>
     <script src="delall.js"></script>
     <script src="test.js"></script>
+    <script src="search.js"></script>
 
     <script>
         UppDate();
@@ -87,6 +93,10 @@
         document.getElementById('Test').onclick = function () {
             Test();
             UppDate();
+        }
+
+        document.getElementById('search').onclick = function () {
+            Search();
         }
 
     </script>
