@@ -1,5 +1,5 @@
 function Test() {
-  for (i = 0; i < 100000; i++) {
+  for (i = 0; i < 100; i++) {
     maxinn = 999999999999;
     mininn = 1000000000;
     maxPrice = 8000;
