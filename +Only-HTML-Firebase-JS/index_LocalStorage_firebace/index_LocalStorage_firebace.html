@@ -14,21 +14,37 @@
 
     <body>
         <h4>Формат данных: EAN INN Price Name</h4>
-        <h4>Пример: 14601234567890 2905782799 129.0 Печенье</h4>
+        <h5>Пример: 14601234567890 2905782799 129.0 Печенье</h5>
         <br>
-        > <input id="box" type="text"></input>
+        >
+        <input id="box" type="text"></input>
         <button id="insert">INSERT</button>
-        <button id="UppDate">UppDate</button>
         <button id="Del">Del</button>
+
+
+        <h6>Эксперементальные функции</h6>
+        <!-- <button id="UppDate">UppDate</button> -->
         <button id="DelAll">DelAll</button>
+        <button id="Test">Test</button>
 
         </br>
+        <table>
 
+            <tr>
+                <td>Количество элементов localStorage:
+                    <span id="localStorage.length"></span>
+                </td>
+            </tr>
 
-        <td>Вывод:</td>
-        <td>
-            <pre id="displayInPre">
+            <tr>
+                <td>Вывод, отображено 20 последних элементов:</td>
+            </tr>
+
+        </table>
+
+        <pre id="displayInPre">
             </pre>
+
     </body>
 
     <link rel="stylesheet" href="styles.css">
@@ -46,27 +62,30 @@
     <script src="uppdate.js"></script>
     <script src="del.js"></script>
     <script src="delall.js"></script>
+    <script src="test.js"></script>
 
     <script>
         UppDate();
 
         document.getElementById('insert').onclick = function () {
-            Insert();
+            setTimeout(Insert(), 10);
             UppDate();
         }
 
-        document.getElementById('UppDate').onclick = function () {
-            UppDate();
-        }
+        // document.getElementById('UppDate').onclick = function () {
+        //     UppDate();
+        // }
 
         document.getElementById('DelAll').onclick = function () {
-
             DelAll();
             UppDate();
         }
         document.getElementById('Del').onclick = function () {
-
             Del();
+            UppDate();
+        }
+        document.getElementById('Test').onclick = function () {
+            setTimeout(Test(), 1000);
             UppDate();
         }
 

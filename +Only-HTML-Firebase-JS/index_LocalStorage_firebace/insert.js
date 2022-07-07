@@ -9,11 +9,12 @@ function Insert() {
   var price = arr[2];
   var name = arr[3];
 
-  J = {
+  valueJSON = {
     EAN: ean,
     INN: inn,
     Price: price,
-    Name: name
+    Name: name,
+    Date: Date.now()
   };
 
   hashCode = ean;
@@ -23,8 +24,7 @@ function Insert() {
 
   if (dbchek == "нет данных в БД") {
     console.log(`запись в localStorage = ${hashCode}`);
-    localStorage.setItem(ean, JSON.stringify(J));
+    // localStorage.setItem(new Date(), JSON.stringify(valueJSON));
+    localStorage.setItem(Date.now(), JSON.stringify(valueJSON));
   }
-
-  UppDate();
 }
