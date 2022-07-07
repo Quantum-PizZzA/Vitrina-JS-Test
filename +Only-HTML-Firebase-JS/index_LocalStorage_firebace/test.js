@@ -25,12 +25,12 @@ function Test() {
       "Наушники",
       "Кружка",
       "Обруч",
-      "Гиря."
+      "Гиря",
+      "Книга",
+      "Ноутбук"
     ];
 
     const word = words[Math.floor(Math.random() * (words.length + 1))];
-
-    // const word = words[randomNumber(0, words.length - 1)];
 
     if (checkEAN(i) == 0) {
       // WScript.Echo(i, " no ean ", checkEAN(i));
