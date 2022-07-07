@@ -16,6 +16,7 @@ function UppDate() {
       numb++;
 
       displayInPre +=
+        "\t" +
         numb +
         "\t" +
         localStorage.key(i) +
@@ -36,7 +37,7 @@ function UppDate() {
   //       "\n";
   //   }
   // }
+  document.getElementById("displayInPre").innerHTML = displayInPre;
   document.getElementById("localStorage.length").innerHTML =
     localStorage.length;
-  document.getElementById("displayInPre").innerHTML = displayInPre;
 }
