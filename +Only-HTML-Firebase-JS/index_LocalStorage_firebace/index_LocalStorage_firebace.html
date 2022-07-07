@@ -1,0 +1,75 @@
+<details>
+    <summary>Задача:</summary>
+    <pre>
+        В строчку вводятся данные EAN INN Price Name 
+
+        Запись в Local Storege 
+        Если нет ключа EAN в формате JSON [EAN INN Price Name] 
+        Вывсти данные из Local Storege 
+        Отправка в Firebace
+        </pre>
+</details>
+
+<html>
+
+    <body>
+        <h4>Формат данных: EAN INN Price Name</h4>
+        <h4>Пример: 14601234567890 2905782799 129.0 Печенье</h4>
+        <br>
+        > <input id="box" type="text"></input>
+        <button id="insert">INSERT</button>
+        <button id="UppDate">UppDate</button>
+        <button id="Del">Del</button>
+        <button id="DelAll">DelAll</button>
+
+        </br>
+
+
+        <td>Вывод:</td>
+        <td>
+            <pre id="displayInPre">
+            </pre>
+    </body>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+    <script src="javascript/inn.js"></script>
+    <script src="javascript/body.js"></script>
+    <!-- <script src="javascript/table.js"></script> -->
+    <script src="javascript/barcode.js"></script>
+
+    <script src="insert.js"></script>
+    <script src="uppdate.js"></script>
+    <script src="del.js"></script>
+    <script src="delall.js"></script>
+
+    <script>
+        UppDate();
+
+        document.getElementById('insert').onclick = function () {
+            Insert();
+            UppDate();
+        }
+
+        document.getElementById('UppDate').onclick = function () {
+            UppDate();
+        }
+
+        document.getElementById('DelAll').onclick = function () {
+
+            DelAll();
+            UppDate();
+        }
+        document.getElementById('Del').onclick = function () {
+
+            Del();
+            UppDate();
+        }
+
+    </script>
+
+</html>
