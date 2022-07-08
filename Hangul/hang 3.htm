@@ -1,0 +1,31 @@
+<!-- 
+0000	44032
+9999  54031
+
+_000  54032
+_999  55031 
+
+__00	55032
+__99	55131
+
+___0	55132
+___9	55141
+
+-->
+
+<script>
+  value = "009";
+
+  if (value.length == 1) { convert____0() }
+  if (value.length == 2) { convert___00() }
+  if (value.length == 3) { convert__000() }
+  if (value.length == 4) { convert_0000() }
+
+  console.log(value.length, value, valueEdit)
+
+  function convert____0() { valueEdit = Number(value) + 55132 }
+  function convert___00() { valueEdit = Number(value) + 55032 }
+  function convert__000() { valueEdit = Number(value) + 54032 }
+  function convert_0000() { valueEdit = Number(value) + 44032 }
+
+</script>
