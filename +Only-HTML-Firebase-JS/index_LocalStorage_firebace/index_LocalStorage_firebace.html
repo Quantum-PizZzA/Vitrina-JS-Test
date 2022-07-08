@@ -1,15 +1,3 @@
-<!-- <details>
-    <summary>Задача:</summary>
-    <pre>
-        В строчку вводятся данные EAN INN Price Name 
-
-        Запись в Local Storege 
-        Если нет ключа EAN в формате JSON [EAN INN Price Name] 
-        Вывсти данные из Local Storege 
-        Отправка в Firebace
-        </pre>
-</details> -->
-
 <html>
 
     <body>
@@ -20,103 +8,44 @@
         <input id="box" type="text"></input>
         <button id="insert">Ввод</button>
         <button id="Del">Удалить поледнюю строку</button>
-
-
         <h6>Эксперементальные функции</h6>
-        <!-- <button id="UppDate">UppDate</button> -->
         <button id="DelAll">Удалить всё</button>
         <button id="Test">Добавить элементов </button>
-
         </br>
-        <!-- <table>
-            <tr>
-                <td>Количество элементов localStorage:
-                    <span id="localStorage.length"></span>
-                </td>
-            </tr>
-
-        </table> -->
-
         <input id="filterInput" type="text"></input>
-        <!-- <button id="search">Поиск</button> -->
-
-        <!-- <table>
-            <tr>
-                <td>Найдено обектов:
-                    <span id="numbSearch"></span>
-                </td>
-            </tr>
-        </table> -->
-
         <pre id="disSearch">
             </pre>
-
-        <!-- <table>
-            <tr>
-                <td>Вывод, отображено 20 последних элементов:</td>
-            </tr>
-        </table> -->
-
-
-
         <pre id="displayInPre">
             </pre>
-
-
     </body>
-
     <link rel="stylesheet" href="styles.css">
-
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
-
     <script src="javascript/inn.js"></script>
     <script src="javascript/body.js"></script>
-    <!-- <script src="javascript/table.js"></script> -->
     <script src="javascript/barcode.js"></script>
-
     <script src="insert.js"></script>
-    <!-- <script src="uppdate.js"></script> -->
     <script src="del.js"></script>
     <script src="delall.js"></script>
     <script src="test.js"></script>
     <script src="search.js"></script>
-
     <script>
-        // UppDate();
-
         document.getElementById('insert').onclick = function () {
             Insert();
             UppDate();
         }
-
-        // document.getElementById('UppDate').onclick = function () {
-        //     UppDate();
-        // }
-
         document.getElementById('DelAll').onclick = function () {
             DelAll();
-            // UppDate();
         }
         document.getElementById('Del').onclick = function () {
             Del();
-            // UppDate();
         }
         document.getElementById('Test').onclick = function () {
             Test();
-            // UppDate();
         }
-
-        // document.getElementById('search').onclick = function () {
-        //     Search();
-        // }
-
-
-
         filterInput.addEventListener("keyup", Search);
         console.log("Search");
-
     </script>
 
 </html>
