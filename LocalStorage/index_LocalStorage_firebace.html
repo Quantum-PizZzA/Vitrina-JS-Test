@@ -13,6 +13,8 @@
         <button id="Test">Добавить элементов </button>
         </br>
         <!-- <input id="filterInput" type="text"></input> -->
+        <pre id="cap">
+        </pre>
         <pre id="disSearch">
             </pre>
         <pre id="displayInPre">
@@ -22,26 +24,23 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
-    <script src="javascript/inn.js"></script>
-    <script src="javascript/body.js"></script>
-    <script src="javascript/barcode.js"></script>
-    <script src="javascript/insert.js"></script>
-    <script src="javascript/del.js"></script>
-    <script src="javascript/delall.js"></script>
-    <script src="javascript/test.js"></script>
-    <script src="javascript/search.js"></script>
-    <script src="javascript/uppdate.js"></script>
-    <script src="javascript/uppdate2.js"></script>
+    <script src="JavaScript/inn.js"></script>
+    <script src="JavaScript/body.js"></script>
+    <script src="JavaScript/barcode.js"></script>
+    <script src="JavaScript/insert.js"></script>
+    <script src="JavaScript/del.js"></script>
+    <script src="JavaScript/delall.js"></script>
+    <script src="JavaScript/test.js"></script>
+    <script src="JavaScript/search.js"></script>
+    <script src="JavaScript/uppdate.js"></script>
+    <script src="JavaScript/uppdate2.js"></script>
     <script>
         document.getElementById('insert').onclick = function () {
             box.addEventListener("keyup", Search);
-            console.log("Search");
             Insert();
             Search();
         }
         document.getElementById('Del').onclick = function () {
-            box.addEventListener("keyup", Search);
-            console.log("Search");
             Del();
             Search();
         }
