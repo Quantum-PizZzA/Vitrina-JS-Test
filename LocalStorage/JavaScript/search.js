@@ -12,7 +12,13 @@ function Search() {
     let array = localStorage.getItem(localStorage.key(i));
 
     if (array.toUpperCase().indexOf(valueSearch) > -1) {
+      PasureJSON = JSON.parse(localStorage.getItem(localStorage.key(i)));
       numbSearch++;
+
+      if (PasureJSON.EAN == undefined) PasureJSON.EAN = "";
+      if (PasureJSON.INN == undefined) PasureJSON.INN = "";
+      if (PasureJSON.Price == undefined) PasureJSON.Price = "";
+      if (PasureJSON.Name == undefined) PasureJSON.Name = "";
 
       disSearch +=
         "\t" +
@@ -20,7 +26,13 @@ function Search() {
         "\t" +
         localStorage.key(i) +
         "\t" +
-        localStorage.getItem(localStorage.key(i)) +
+        PasureJSON.EAN +
+        "\t" +
+        PasureJSON.INN +
+        "\t" +
+        PasureJSON.Price +
+        "\t" +
+        PasureJSON.Name +
         "\n";
     } else {
       // disSearch = "\t" + "Ничего не найдено";
