@@ -1,0 +1,9 @@
+<pre id="s">
+</pre>
+<script>
+  s = "";
+  for (i = 0; i < 11110; i++)
+    s += "\n" + (i + 1) + "\t" + String.fromCodePoint(44032 + i);
+  document.getElementById("s").innerHTML = s;
+
+</script>

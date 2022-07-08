@@ -1,0 +1,43 @@
+<!-- 
+0000	44032
+9999  54031
+
+_000  54032
+_999  55031 
+
+__00	55032
+__99	55131
+
+___0	55132
+___9	55141
+
+-->
+
+<pre id="s">
+</pre>
+<script>
+  // value = 0;
+
+  for (i = 0; i < 11110; i++) {
+    value = 0;
+    value = i;
+    if ("0" <= value <= "9") { convert____0() }
+    if ("00" <= value <= "99") { convert___00() }
+    if ("000" <= value <= "999") { convert__000() }
+    if ("0000" <= value <= "9999") { convert_0000() }
+    console.log(i, valuetest)
+  }
+
+
+  function convert____0() { valuetest = value + 55132 }
+  function convert___00() { valuetest = value + 55032 }
+  function convert__000() { valuetest = value + 54032 }
+  function convert_0000() { valuetest = value + 44032 }
+
+
+  // s = "";
+  // for (i = 0; i < 11110; i++)
+  //   s += "\n" + (i + 1) + "\t" + String.fromCodePoint(44032 + i);
+  // document.getElementById("s").innerHTML = s;
+
+</script>
