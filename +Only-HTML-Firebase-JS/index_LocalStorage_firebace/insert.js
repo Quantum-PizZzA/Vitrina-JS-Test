@@ -20,10 +20,10 @@ function Insert() {
 
   dbchek = "нет данных в БД";
 
-  console.log(`${dbchek} = [${Date.now()}]`);
+  // console.log(`${dbchek} = [${Date.now()}]`);
 
   if (dbchek == "нет данных в БД") {
-    console.log(`запись в localStorage = ${Date.now()}`);
+    // console.log(`запись в localStorage = ${Date.now()}`);
     localStorage.setItem(Date.now(), JSON.stringify(valueJSON));
   }
 }
