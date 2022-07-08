@@ -1,7 +1,7 @@
 let disSearch = " \n";
 
 function Search() {
-  valueSearch = document.getElementById("filterInput").value;
+  valueSearch = document.getElementById("filterInput").value.toUpperCase();
   // document.getElementById("filterValue").innerHTML = filterValue;
 
   console.log("function Search");
@@ -12,7 +12,7 @@ function Search() {
   for (let i = 0; i < localStorage.length && numbSearch < 10; i++) {
     let array = localStorage.getItem(localStorage.key(i));
 
-    if (array.indexOf(valueSearch) > -1) {
+    if (array.toUpperCase().indexOf(valueSearch) > -1) {
       numbSearch++;
 
       disSearch +=
