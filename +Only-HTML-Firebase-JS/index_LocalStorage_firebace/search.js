@@ -1,6 +1,9 @@
 let disSearch = " \n";
 
 function Search() {
+  valueSearch = document.getElementById("filterInput").value;
+  // document.getElementById("filterValue").innerHTML = filterValue;
+
   console.log("function Search");
 
   numbSearch = 0;
