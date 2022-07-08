@@ -1,7 +1,7 @@
 let disSearch = " \n";
 
 function Search() {
-  console.log("function Search");
+  valueSearch = document.getElementById("boxsearch").value;
 
   numbSearch = 0;
   disSearch = "";
@@ -27,6 +27,6 @@ function Search() {
 
   if (numbSearch == 0) disSearch = "\t" + "Ничего не найдено" + "\n";
 
-  // document.getElementById("numbSearch").innerHTML = numbSearch;
+  document.getElementById("numbSearch").innerHTML = numbSearch;
   document.getElementById("disSearch").innerHTML = disSearch;
 }
