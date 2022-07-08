@@ -12,7 +12,7 @@
         <button id="DelAll">Удалить всё</button>
         <button id="Test">Добавить элементов </button>
         </br>
-        <input id="filterInput" type="text"></input>
+        <!-- <input id="filterInput" type="text"></input> -->
         <pre id="disSearch">
             </pre>
         <pre id="displayInPre">
@@ -30,21 +30,30 @@
     <script src="delall.js"></script>
     <script src="test.js"></script>
     <script src="search.js"></script>
+    <script src="uppdate.js"></script>
+    <script src="uppdate2.js"></script>
     <script>
         document.getElementById('insert').onclick = function () {
+            box.addEventListener("keyup", Search);
+            console.log("Search");
             Insert();
-            UppDate();
+            Search();
+        }
+        document.getElementById('Del').onclick = function () {
+            box.addEventListener("keyup", Search);
+            console.log("Search");
+            Del();
+            Search();
         }
         document.getElementById('DelAll').onclick = function () {
             DelAll();
-        }
-        document.getElementById('Del').onclick = function () {
-            Del();
+            UppDate2();
         }
         document.getElementById('Test').onclick = function () {
             Test();
+            Search();
         }
-        filterInput.addEventListener("keyup", Search);
+        box.addEventListener("keyup", Search);
         console.log("Search");
     </script>
 

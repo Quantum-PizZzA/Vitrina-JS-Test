@@ -18,6 +18,7 @@ input {
 input {
   width: 450px;
   height: 25px;
+  width: 75% !important;
 }
 
 a.button8 {

@@ -14,8 +14,8 @@ function Insert() {
     INN: inn,
     Price: price,
     Name: name,
-    Date: Date.now(),
-    Date2: new Date()
+    // Date: Date.now(),
+    Date: new Date()
   };
 
   dbchek = "нет данных в БД";
