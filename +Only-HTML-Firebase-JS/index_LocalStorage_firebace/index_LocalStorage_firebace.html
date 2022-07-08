@@ -37,25 +37,25 @@
 
         </table>
 
-        <input id="boxsearch" type="text"></input>
-        <button id="search">Поиск</button>
+        <input id="filterInput" type="text"></input>
+        <!-- <button id="search">Поиск</button> -->
 
-        <table>
+        <!-- <table>
             <tr>
                 <td>Найдено обектов:
                     <span id="numbSearch"></span>
                 </td>
             </tr>
-        </table>
+        </table> -->
 
         <pre id="disSearch">
             </pre>
 
-        <table>
+        <!-- <table>
             <tr>
                 <td>Вывод, отображено 20 последних элементов:</td>
             </tr>
-        </table>
+        </table> -->
 
 
 
@@ -77,14 +77,14 @@
     <script src="javascript/barcode.js"></script>
 
     <script src="insert.js"></script>
-    <script src="uppdate.js"></script>
+    <!-- <script src="uppdate.js"></script> -->
     <script src="del.js"></script>
     <script src="delall.js"></script>
     <script src="test.js"></script>
     <script src="search.js"></script>
 
     <script>
-        UppDate();
+        // UppDate();
 
         document.getElementById('insert').onclick = function () {
             Insert();
@@ -97,20 +97,25 @@
 
         document.getElementById('DelAll').onclick = function () {
             DelAll();
-            UppDate();
+            // UppDate();
         }
         document.getElementById('Del').onclick = function () {
             Del();
-            UppDate();
+            // UppDate();
         }
         document.getElementById('Test').onclick = function () {
             Test();
-            UppDate();
+            // UppDate();
         }
 
-        document.getElementById('search').onclick = function () {
-            Search();
-        }
+        // document.getElementById('search').onclick = function () {
+        //     Search();
+        // }
+
+
+        valueSearch = document.getElementById("filterInput").value;
+        filterInput.addEventListener("keyup", Search);
+        console.log("Search");
 
     </script>
 
