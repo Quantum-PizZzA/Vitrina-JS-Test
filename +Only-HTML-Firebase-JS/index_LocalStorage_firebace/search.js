@@ -6,8 +6,9 @@ function Search() {
   numbSearch = 0;
   disSearch = "";
 
-  for (let i = 0; i < localStorage.length; i++) {
-    let array = localStorage.key(i);
+  for (let i = 0; i < localStorage.length && numbSearch < 10; i++) {
+    // console.log(localStorage.key(i), localStorage.getItem(localStorage.key(i)));
+    let array = localStorage.getItem(localStorage.key(i));
 
     if (array.indexOf(valueSearch) > -1) {
       numbSearch++;
