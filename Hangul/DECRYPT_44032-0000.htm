@@ -1,0 +1,65 @@
+<!-- 
+0000	44032
+9999  54031
+
+_000  54032
+_999  55031 
+
+__00	55032
+__99	55131
+
+___0	55132
+___9	55141
+
+-->
+
+<script>
+  value = 44032 + 100;
+  valueEdit = 0;
+
+  if ((44032 <= Number(value)) && (Number(value) <= 54031)) { convert_0000(value) }
+  if ((54032 <= Number(value)) && (Number(value) <= 55031)) { convert__000(value) }
+  if ((55032 <= Number(value)) && (Number(value) <= 55131)) { convert___00(value) }
+  if ((55132 <= Number(value)) && (Number(value) <= 55141)) { convert____0(value) }
+
+  function convert____0() {
+    valueEdit = Number(value) - 55132;
+    stringValueEdit = String(valueEdit);
+
+    for (i = 0; stringValueEdit.length < 1; i++) {
+      stringValueEdit = "0" +
+        String(stringValueEdit)
+    };
+  }
+  function convert___00() {
+    valueEdit = Number(value) - 55032;
+    stringValueEdit = String(valueEdit);
+
+    for (i = 0; stringValueEdit.length < 2; i++) {
+      stringValueEdit = "0" +
+        String(stringValueEdit)
+    };
+  }
+  function convert__000(value) {
+    valueEdit = Number(value) - 54032;
+    stringValueEdit = String(valueEdit);
+
+    for (i = 0; stringValueEdit.length < 3; i++) {
+      stringValueEdit = "0" +
+        String(stringValueEdit)
+    };
+  }
+  function convert_0000() {
+    valueEdit = Number(value) - 44032;
+    stringValueEdit = String(valueEdit);
+
+    for (i = 0; stringValueEdit.length < 4; i++) {
+      stringValueEdit = "0" +
+        String(stringValueEdit)
+
+    };
+  }
+
+  console.log(value, stringValueEdit);
+
+</script>
