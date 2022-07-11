@@ -17,39 +17,60 @@
     <script src="ENCRYPT.JS"></script>
 
     <script>
-        var s = 0;
-        var f = 10000;
+        var start = 0;
+        var finish = 31;
 
-        value_10 = "";
+        // value_10 = "";
         block_4 = "";
+        hengul = "";
         j = 0;
+        keyLS = 0;
 
-        for (var i = s; i <= f; i++) {
-            if (checkEAN(i) == 0) {
+        for (var rack = start; rack <= finish; rack++) {
+
+            if (checkEAN(rack) == 0) {
                 // no ean
             } else {
                 // ean!
-                value_10 += i % 10;
-                block_4 += i % 10;
+                // value_10 += rack % 10;
+                block_4 += rack % 10;
                 j++;
                 if (j == 4) {
-                    x = encript(block_4);
-                    y = String.fromCharCode(encript(x));
-                    z = y.charCodeAt();
-                    k = decript(z);
-                    console.log(block_4, x, y, z, k);
+                    keyLS++;
 
+                    //4 блок 
+                    //число + 44773
+                    x = encript(block_4);
+                    //쵑 хангулина
+                    y = String.fromCharCode(encript(x));
+                    hengul = hengul + y;
+                    //decript - 44773
+                    z = y.charCodeAt();
+                    // декодирование числа из числа
+                    f = decript(z);
+
+                    console.log(block_4, x, y, z, f);
 
                     j = 0;
                     block_4 = "";
 
-                    // console.log(" x= ", x);
                 }
             }
         }
-        // console.log("value_10= ", value_10);
+
+        localStorage.setItem(keyLS * 4, hengul);
+
+        t = "";
+        q = localStorage.getItem(keyLS * 4);
 
 
+        for (i = 0; i < q.length; i++) {
+            console.log(
+                q[i],
+                q[i].charCodeAt(),
+                decript(q[i].charCodeAt())
+            );
+        }
 
 
     </script>

@@ -21,8 +21,9 @@ function checkEAN(value) {
 // var s = 4607548752482 - 1;
 // var f = 4607548752482 + 1;
 
-var s = 1;
-var f = 10e10;
+var s = 0;
+// var f = 10e10;
+var f = 100;
 
 for (var i = s; i <= f; i++) {
   if (checkEAN(i) == 0) {
