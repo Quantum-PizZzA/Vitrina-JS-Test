@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+    </body>
+    <script src="checkEAN.js"></script>
+
+    <script src="DECRYPT.JS"></script>
+    <script src="ENCRYPT.JS"></script>
+
+    <script>
+        var s = 0;
+        var f = 10000;
+
+        value_10 = "";
+        block_4 = "";
+        j = 0;
+
+        for (var i = s; i <= f; i++) {
+            if (checkEAN(i) == 0) {
+                // no ean
+            } else {
+                // ean!
+                value_10 += i % 10;
+                block_4 += i % 10;
+                j++;
+                if (j == 4) {
+                    x = encript(block_4);
+                    y = String.fromCharCode(encript(x));
+                    z = y.charCodeAt();
+                    k = decript(z);
+                    console.log(block_4, x, y, z, k);
+
+
+                    j = 0;
+                    block_4 = "";
+
+                    // console.log(" x= ", x);
+                }
+            }
+        }
+        // console.log("value_10= ", value_10);
+
+
+
+
+    </script>
+
+</html>
