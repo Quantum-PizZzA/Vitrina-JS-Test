@@ -18,6 +18,9 @@
     <input type="file" id="file">
     <button id="read">Чтение файла</button>
 
+    <td>
+      <button id="dell">dellall</button>
+    </td>
     <tr>
       </form>
 
@@ -58,6 +61,10 @@
 
           }
         });
+
+        document.getElementById('dell').onclick = function () {
+          localStorage.clear();
+        }
 
       </script>
   </body>
