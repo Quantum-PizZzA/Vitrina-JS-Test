@@ -9,13 +9,15 @@
     </head>
 
     <body>
-        <td><input type="text" id="writeinput" value="10000" />
+        <td><input type="text" id="writeinput" value="100000000" />
             <button id="write">write</button>
         </td>
 
-        <td><input type="text" id="readinput" value="1000" />
+        <td><input type="text" id="readinput" value="10000000" />
             <button id="read">read</button>
         </td>
+
+        <button id="download">download</button>
 
         <p id="kol" style="word-break: break-all">
         </p>
@@ -43,9 +45,14 @@
             dell();
         }
 
+        document.getElementById('download').onclick = function () {
+            download();
+        }
         function dell() {
             localStorage.clear();
         }
+
+
 
 
 
@@ -118,7 +125,18 @@
             document.getElementById("kol").innerHTML = lsitem.length;
 
             // console.log(hang);
+            return lsitem;
+
         }
+
+        function download() {
+            item =
+                "<a download='FileName.txt' href='data:application/octet-stream;UTF-8," + lsitem + "'>download</a>";
+
+            document.write(item);
+        }
+
+
 
     </script>
 
