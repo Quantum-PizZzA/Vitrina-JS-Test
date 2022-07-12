@@ -22,9 +22,16 @@
       <button id="dell">dellall</button>
     </td>
     <tr>
+
+      <p id="kol" style="word-break: break-all">0
+      </p>
+
       </form>
 
       <!-- <script src="javascript/body.js"></script> -->
+
+      <script src="DECRYPT.JS"></script>
+      <script src="ENCRYPT.JS"></script>
 
       <script>
 
@@ -36,9 +43,15 @@
 
           reader.readAsText(file);
 
+          block_4 = "";
+          hengul = "";
+          j = 1;
+          keyLS = 0;
+
+
           reader.onload = function () {
-            for (i = 0; i < reader.result.length - 1; i++) {
-              console.log(reader.result[i]);
+            for (i = 0; i < reader.result.length; i++, j++) {
+              block_4 += reader.result[i];
               if (j == 4) {
                 keyLS++;
 
@@ -59,8 +72,15 @@
             }
             localStorage.setItem(keyLS * 4, hengul);
 
+
+            document.getElementById("kol").innerHTML = hengul.length;
+
+            console.log(block_4);
+
           }
         });
+
+
 
         document.getElementById('dell').onclick = function () {
           localStorage.clear();
