@@ -17,6 +17,13 @@
             <button id="read">read</button>
         </td>
 
+        <p id="kol" style="word-break: break-all">
+        </p>
+
+        <td>
+            <button id="dell">dellall</button>
+        </td>
+
         <p id="dis" style="word-break: break-all">
         </p>
 
@@ -32,7 +39,13 @@
         document.getElementById('read').onclick = function () {
             read();
         }
+        document.getElementById('dell').onclick = function () {
+            dell();
+        }
 
+        function dell() {
+            localStorage.clear();
+        }
 
 
 
@@ -102,16 +115,12 @@
 
             dis = "";
             document.getElementById("dis").innerHTML = hang;
+            document.getElementById("kol").innerHTML = lsitem.length;
 
-            console.log(hang);
+            // console.log(hang);
         }
 
     </script>
 
-    <style>
-        pre {
-            word-break: break-all;
-        }
-    </style>
 
 </html>
