@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-elsitemuiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
     </head>
@@ -17,8 +17,9 @@
     <script src="ENCRYPT.JS"></script>
 
     <script>
+        /*
         var start = 0;
-        var finish = 31;
+        var finish = 100000000;
 
         // value_10 = "";
         block_4 = "";
@@ -45,11 +46,12 @@
                     y = String.fromCharCode(encript(x));
                     hengul = hengul + y;
                     //decript - 44773
-                    z = y.charCodeAt();
+                    // z = y.charCodeAt();
                     // декодирование числа из числа
-                    f = decript(z);
+                    // f = decript(z);
 
-                    console.log(block_4, x, y, z, f);
+                    // console.log(block_4, x, y, z, f);
+                    //console.log(block_4, x, y,);
 
                     j = 0;
                     block_4 = "";
@@ -58,20 +60,34 @@
             }
         }
 
-        localStorage.setItem(keyLS * 4, hengul);
+        localStorage.setItem(keyLS * 4, hengul); */
 
-        t = "";
-        q = localStorage.getItem(keyLS * 4);
+        // t = "";
+        // lsitem = localStorage.getItem(keyLS * 4);
+
+        hang = "";
+
+        kkk = 10000000;
+        lsitem = localStorage.getItem(kkk);
 
 
-        for (i = 0; i < q.length; i++) {
-            console.log(
-                q[i],
-                q[i].charCodeAt(),
-                decript(q[i].charCodeAt())
-            );
+
+
+        for (i = 0; i < lsitem.length; i++) {
+
+            hang += decript(lsitem[i].charCodeAt());
+            // console.log(
+            //     lsitem[i],
+            //     lsitem[i].charCodeAt(),
+            //     decript(lsitem[i].charCodeAt())
+            // );
         }
 
+
+
+        console.log(hang);
+
+        console.log("Готово");
 
     </script>
 
