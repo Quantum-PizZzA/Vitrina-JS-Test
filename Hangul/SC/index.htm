@@ -9,86 +9,109 @@
     </head>
 
     <body>
+        <td><input type="text" id="writeinput" value="10000" />
+            <button id="write">write</button>
+        </td>
+
+        <td><input type="text" id="readinput" value="1000" />
+            <button id="read">read</button>
+        </td>
+
+        <p id="dis" style="word-break: break-all">
+        </p>
 
     </body>
     <script src="checkEAN.js"></script>
-
     <script src="DECRYPT.JS"></script>
     <script src="ENCRYPT.JS"></script>
 
     <script>
-        /*
-        var start = 0;
-        var finish = 100000000;
+        document.getElementById('write').onclick = function () {
+            write();
+        }
+        document.getElementById('read').onclick = function () {
+            read();
+        }
 
-        // value_10 = "";
-        block_4 = "";
-        hengul = "";
-        j = 0;
-        keyLS = 0;
 
-        for (var rack = start; rack <= finish; rack++) {
 
-            if (checkEAN(rack) == 0) {
-                // no ean
-            } else {
-                // ean!
-                // value_10 += rack % 10;
-                block_4 += rack % 10;
-                j++;
-                if (j == 4) {
-                    keyLS++;
 
-                    //4 блок 
-                    //число + 44773
-                    x = encript(block_4);
-                    //쵑 хангулина
-                    y = String.fromCharCode(encript(x));
-                    hengul = hengul + y;
-                    //decript - 44773
-                    // z = y.charCodeAt();
-                    // декодирование числа из числа
-                    // f = decript(z);
+        function write() {
 
-                    // console.log(block_4, x, y, z, f);
-                    //console.log(block_4, x, y,);
+            writeinput = parseInt(document.getElementById("writeinput").value);
 
-                    j = 0;
-                    block_4 = "";
+            var start = 0;
+            var finish = writeinput;
 
+            block_4 = "";
+            hengul = "";
+            j = 0;
+            keyLS = 0;
+
+            for (var rack = start; rack <= finish; rack++) {
+
+                if (checkEAN(rack) == 0) {
+                    // no ean
+                } else {
+                    // ean!
+                    block_4 += rack % 10;
+                    j++;
+                    if (j == 4) {
+                        keyLS++;
+
+                        //4 блок 
+                        x = encript(block_4);
+                        //쵑 хангулина
+                        y = String.fromCharCode(encript(x));
+                        hengul = hengul + y;
+                        //decript - 44773
+                        // z = y.charCodeAt();
+                        // декодирование числа из числа
+                        // f = decript(z);
+
+                        j = 0;
+                        block_4 = "";
+
+                    }
                 }
             }
+
+            localStorage.setItem(keyLS * 4, hengul);
+            console.log("Записано", writeinput);
         }
 
-        localStorage.setItem(keyLS * 4, hengul); */
+        function read() {
 
-        // t = "";
-        // lsitem = localStorage.getItem(keyLS * 4);
+            readinput = parseInt(document.getElementById("readinput").value);
 
-        hang = "";
+            t = "";
+            lsitem = localStorage.getItem(readinput);
 
-        kkk = 10000000;
-        lsitem = localStorage.getItem(kkk);
+            hang = "";
+
+            for (i = 0; i < lsitem.length; i++) {
+
+                hang += decript(lsitem[i].charCodeAt());
+                // console.log(
+                //     lsitem[i],
+                //     lsitem[i].charCodeAt(),
+                //     decript(lsitem[i].charCodeAt())
+                // );
+            }
 
 
+            dis = "";
+            document.getElementById("dis").innerHTML = hang;
 
-
-        for (i = 0; i < lsitem.length; i++) {
-
-            hang += decript(lsitem[i].charCodeAt());
-            // console.log(
-            //     lsitem[i],
-            //     lsitem[i].charCodeAt(),
-            //     decript(lsitem[i].charCodeAt())
-            // );
+            console.log(hang);
         }
-
-
-
-        console.log(hang);
-
-        console.log("Готово");
 
     </script>
+
+    <style>
+        pre {
+            word-break: break-all;
+        }
+    </style>
 
 </html>
