@@ -26,8 +26,13 @@
             <button id="dell">dellall</button>
         </td>
 
+
         <!-- <p id="dis" style="word-break: break-all">
         </p> -->
+        <td>
+            <input type="file" id="file">
+            <button id="readfile">Чтение файла</button>
+        </td>
 
     </body>
     <script src="checkEAN.js"></script>
@@ -51,6 +56,49 @@
         function dell() {
             localStorage.clear();
         }
+
+
+        //обработка файла
+        document.querySelector("#read").addEventListener("click", function Text() {
+            let file = document.getElementById("file").files[0];
+
+            let reader = new FileReader();
+
+            reader.readAsText(file);
+
+            reader.onload = function () {
+
+                console.log("Кнопка");
+
+                for (i = 0; i < reader.length; i++) {
+                    if (jr == 4) {
+                        keyLSr++;
+
+                        //4 блок 
+                        xr = encript(block_4r);
+                        //쵑 хангулина
+                        y = String.fromCharCode(encript(xr));
+                        hengulr = hengulr + yr;
+                        //decript - 44773
+                        // z = y.charCodeAt();
+                        // декодирование числа из числа
+                        // f = decript(z);
+
+                        jr = 0;
+                        block_4r = "";
+
+                        console.log(block_4r);
+
+                    }
+                }
+
+
+
+                // body(reader.result.split("\n"));
+                // console.log(`Добавленный файл: \n${reader.result}`);
+                // const massString = reader.result.split("\n");
+            }
+        });
 
 
 
