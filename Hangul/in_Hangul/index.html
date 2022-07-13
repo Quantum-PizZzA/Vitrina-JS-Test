@@ -26,6 +26,9 @@
       <p id="kol" style="word-break: break-all">0
       </p>
 
+      <p id="progress" style="word-break: break-all">0
+      </p>
+
       </form>
 
       <!-- <script src="javascript/body.js"></script> -->
@@ -68,14 +71,17 @@
                 j = 0;
                 block_4 = "";
 
+                document.getElementById("progress").innerHTML = i;
+
               }
             }
             localStorage.setItem(keyLS * 4, hengul);
 
 
             document.getElementById("kol").innerHTML = hengul.length;
+            document.getElementById("kol").innerHTML = hengul.length;
 
-            console.log(block_4);
+            // console.log(block_4);
 
           }
         });
