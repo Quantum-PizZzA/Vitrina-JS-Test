@@ -6,20 +6,20 @@ function Search() {
   console.log("function Search");
 
   numbSearch = 0;
-  disSearch = 
-  "\t" +
-  "№" +
-  "\t" +
-  "Ключ" +
-  "\t" +
-  "EAN" +
-  "\t" +
-  "INN" +
-  "\t" +
-  "Цена" +
-  "\t" +
-  "Название" +
-  "\n";
+  disSearch = "";
+  //   "\t" +
+  //   "№" +
+  //   "\t" +
+  //   "Ключ" +
+  //   "\t" +
+  //   "EAN" +
+  //   "\t" +
+  //   "INN" +
+  //   "\t" +
+  //   "Цена" +
+  //   "\t" +
+  //   "Название" +
+  //   "\n";
 
   for (let i = 0; i < localStorage.length && numbSearch < 20; i++) {
     let array = localStorage.getItem(localStorage.key(i));
@@ -36,15 +36,15 @@ function Search() {
       disSearch +=
         "\t" +
         numbSearch +
-        "\t" +
-        localStorage.key(i) +
-        "\t" +
+        //".\t" +
+        //localStorage.key(i) +
+        "\t EAN: " +
         PasureJSON.EAN +
-        "\t" +
+        "\t INN: " +
         PasureJSON.INN +
-        "\t" +
+        "\t Цена: " +
         PasureJSON.Price +
-        "\t" +
+        "\t Название: " +
         PasureJSON.Name +
         "\n";
     } else {
