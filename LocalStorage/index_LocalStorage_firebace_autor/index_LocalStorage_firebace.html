@@ -19,13 +19,13 @@
         >
         <input id="box" type="text"></input>
         <button id="insert">Ввод</button>
-        <button id="Del">Удалить поледнюю строку</button>
+        <button id="del">Удалить поледнюю строку</button>
 
 
         <h6>Эксперементальные функции</h6>
-        <!-- <button id="UppDate">UppDate</button> -->
-        <button id="DelAll">Удалить всё</button>
-        <button id="Test">Добавить элементов </button>
+        <button id="delAll">Удалить всё</button>
+        <button id="test">Добавить элементов </button>
+        <button id="firebase">Добавить в Firebase </button>
 
         </br>
         <table>
@@ -53,14 +53,29 @@
 
         <table>
             <tr>
+                <td>Локальное хранилище</td>
+            </tr>
+            <tr>
                 <td>Вывод, отображено 20 последних элементов:</td>
             </tr>
         </table>
 
-
-
         <pre id="displayInPre">
             </pre>
+
+        <table>
+            <tr>
+                <td>Сетевое хранилище <a
+                        href="https://console.firebase.google.com/project/html-js-firebase/database/html-js-firebase-default-rtdb/data">Firebase</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Вывод, отображено 20 последних элементов:</td>
+            </tr>
+        </table>
+
+        <pre id="firebase">
+                </pre>
 
 
     </body>
@@ -73,15 +88,16 @@
 
     <script src="javascript/inn.js"></script>
     <script src="javascript/body.js"></script>
-    <!-- <script src="javascript/table.js"></script> -->
     <script src="javascript/barcode.js"></script>
 
+    <script src="del.js"></script>
+    <script src="test.js"></script>
+    <script src="delall.js"></script>
+    <script src="search.js"></script>
     <script src="insert.js"></script>
     <script src="uppdate.js"></script>
-    <script src="del.js"></script>
-    <script src="delall.js"></script>
-    <script src="test.js"></script>
-    <script src="search.js"></script>
+    <script src="firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase.js"></script>
 
     <script>
         UppDate();
@@ -91,19 +107,15 @@
             UppDate();
         }
 
-        // document.getElementById('UppDate').onclick = function () {
-        //     UppDate();
-        // }
-
-        document.getElementById('DelAll').onclick = function () {
+        document.getElementById('delAll').onclick = function () {
             DelAll();
             UppDate();
         }
-        document.getElementById('Del').onclick = function () {
+        document.getElementById('del').onclick = function () {
             Del();
             UppDate();
         }
-        document.getElementById('Test').onclick = function () {
+        document.getElementById('test').onclick = function () {
             Test();
             UppDate();
         }
@@ -111,7 +123,9 @@
         document.getElementById('search').onclick = function () {
             Search();
         }
-
+        document.getElementById('firebase').onclick = function () {
+            Firebase();
+        }
     </script>
 
 </html>
