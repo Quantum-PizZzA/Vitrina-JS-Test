@@ -1,0 +1,3 @@
+function DelAll() {
+  localStorage.clear();
+}

@@ -1,0 +1,134 @@
+<details>
+    <summary>Задача:</summary>
+    <pre>
+        В строчку вводятся данные EAN INN Price Name 
+
+        Запись в Local Storege 
+        Если нет ключа EAN в формате JSON [EAN INN Price Name] 
+        Вывсти данные из Local Storege 
+        Отправка в Firebace
+        </pre>
+</details>
+
+<html>
+
+    <body>
+        <h4>Формат данных: EAN INN Price Name</h4>
+        <h5>Пример: 24601234567890 2905782799 229.0 Печенье</h5>
+        <br>
+        >
+        <input id="box" type="text"></input>
+        <button id="insert">Ввод</button>
+        <button id="del">Удалить поледнюю строку</button>
+
+
+        <h6>Эксперементальные функции</h6>
+        <button id="delAll">Удалить всё</button>
+        <button id="test">Добавить элементов </button>
+        <button id="firebase">Добавить в Firebase </button>
+
+        </br>
+        <table>
+            <tr>
+                <td>Количество элементов localStorage:
+                    <span id="localStorage.length"></span>
+                </td>
+            </tr>
+
+        </table>
+
+        <input id="boxsearch" type="text"></input>
+        <button id="search">Поиск</button>
+
+        <table>
+            <tr>
+                <td>Найдено обектов:
+                    <span id="numbSearch"></span>
+                </td>
+            </tr>
+        </table>
+
+        <pre id="disSearch">
+            </pre>
+
+        <table>
+            <tr>
+                <h3>Локальное хранилище</р>
+            </tr>
+            <tr>
+                <td>Вывод, отображено 20 последних элементов:</td>
+            </tr>
+        </table>
+
+        <pre id="displayInPre">
+            </pre>
+
+        <table>
+            <tr>
+                <h3>Сетевое хранилище <a
+                        href="https://console.firebase.google.com/project/html-js-firebase/database/html-js-firebase-default-rtdb/data">Firebase</a>
+                </h3>
+            </tr>
+            <tr>
+                <td>Вывод, отображено X последних элементов:</td>
+            </tr>
+        </table>
+
+        <pre id="firebase">
+                </pre>
+
+
+    </body>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+    <script src="javascript/inn.js"></script>
+    <script src="javascript/body.js"></script>
+    <script src="javascript/barcode.js"></script>
+
+    <script src="del.js"></script>
+    <script src="test.js"></script>
+    <script src="delall.js"></script>
+    <script src="search.js"></script>
+    <script src="insert.js"></script>
+    <script src="uppdate.js"></script>
+    <script src="firebaseWrite.js"></script>
+    <script src="firebaseRead.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase.js"></script>
+
+    <script>
+        UppDate();
+
+        document.getElementById('insert').onclick = function () {
+            Insert();
+            UppDate();
+        }
+
+        document.getElementById('delAll').onclick = function () {
+            DelAll();
+            UppDate();
+        }
+        document.getElementById('del').onclick = function () {
+            Del();
+            UppDate();
+        }
+        document.getElementById('test').onclick = function () {
+            Test();
+            UppDate();
+        }
+
+        document.getElementById('search').onclick = function () {
+            Search();
+        }
+        document.getElementById('firebase').onclick = function () {
+            Firebase();
+        }
+
+        FirebaseRead();
+    </script>
+
+</html>
