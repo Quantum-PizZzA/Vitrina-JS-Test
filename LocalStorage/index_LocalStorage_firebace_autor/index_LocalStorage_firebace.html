@@ -53,7 +53,7 @@
 
         <table>
             <tr>
-                <td>Локальное хранилище</td>
+                <h3>Локальное хранилище</р>
             </tr>
             <tr>
                 <td>Вывод, отображено 20 последних элементов:</td>
@@ -65,12 +65,12 @@
 
         <table>
             <tr>
-                <td>Сетевое хранилище <a
+                <h3>Сетевое хранилище <a
                         href="https://console.firebase.google.com/project/html-js-firebase/database/html-js-firebase-default-rtdb/data">Firebase</a>
-                </td>
+                </h3>
             </tr>
             <tr>
-                <td>Вывод, отображено 20 последних элементов:</td>
+                <td>Вывод, отображено X последних элементов:</td>
             </tr>
         </table>
 
@@ -96,7 +96,8 @@
     <script src="search.js"></script>
     <script src="insert.js"></script>
     <script src="uppdate.js"></script>
-    <script src="firebase.js"></script>
+    <script src="firebaseWrite.js"></script>
+    <script src="firebaseRead.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase.js"></script>
 
     <script>
@@ -126,6 +127,8 @@
         document.getElementById('firebase').onclick = function () {
             Firebase();
         }
+
+        FirebaseRead();
     </script>
 
 </html>
