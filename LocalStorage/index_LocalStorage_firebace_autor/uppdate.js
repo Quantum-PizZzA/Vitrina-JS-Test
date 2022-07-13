@@ -4,12 +4,14 @@ function UppDate() {
   numb = 0;
   displayInPre = "";
 
+  localStoragelength = localStorage.length;
+
   if (localStorage.length == 0) {
     displayInPre = "нет данных";
   } else {
     for (
       let i = localStorage.length - 1;
-      i > localStorage.length - 20 - 1;
+      i > localStorage.length - localStoragelength - 1;
       i--
     ) {
       let key = localStorage.key(i);
