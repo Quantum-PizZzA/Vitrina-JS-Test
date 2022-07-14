@@ -30,7 +30,7 @@ function FirebaseRead() {
                 query.length == 0
               )
                 document.getElementById("data").innerHTML +=
-                  '<li> <pre href="#">' +
+                  '<div class="container"> <pre href="#">' +
                   "\t" +
                   iFirebase +
                   "\t EAN: " +
@@ -43,7 +43,7 @@ function FirebaseRead() {
                   formatJSON.Name +
                   "\t User: " +
                   formatJSON.tele +
-                  "</pre></li>";
+                  "</pre></div>";
               iFirebase++;
 
               document.getElementById("Firebase").innerHTML = iFirebase;
@@ -55,7 +55,7 @@ function FirebaseRead() {
   function packet_s() {
     document.write('<h6 id="filterValue"></h6>');
     document.write(
-      '<br> > <input type="text" id="filterInput" placeholder="Поиск..." /> </br>'
+      '<div class="container"> > <input type="text" id="filterInput" placeholder="Поиск..." /> </div>'
     );
     document.write('<ul id="data"></ul>');
     getData();
