@@ -26,12 +26,13 @@ function FirebaseWrite() {
     Ready();
     firebase
       .database()
-      .ref("HTML-JS-Firebase/Anonymous/" + EAN)
+      .ref("HTML-JS-Firebase/Anonymous/" + Date.now())
       .set({
         EAN: EAN,
         INN: INN,
         Name: Name,
-        Price: Price
+        Price: Price,
+        Date: Date.now()
       });
   };
 }

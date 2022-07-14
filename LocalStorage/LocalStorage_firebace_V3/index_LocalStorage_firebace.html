@@ -1,56 +1,12 @@
 <html>
 
-    <!-- <details> -->
-    <!-- <summary>Доп информация LS:</summary> -->
-    <table>
-        <td>Количество элементов localStorage:
-            <span id="localStorage.length"></span>
-        </td>
-
-        <td>Количество элементов Firebase:
-            <span id="Firebase"></span>
-        </td>
-    </table>
-    <!-- </details> -->
-
-    <body>
-        <h4>Формат данных: EAN INN Price Name</h4>
-        <h5>Пример: 34601234567890 3905782799 300.0 Курочка</h5>
-        <br>
-        >
-        <input placeholder="Поиск и ввод..." id="box" type="text"></input>
-        <button id="insert">Ввод</button>
-        <button id="Del">Удалить поледнюю строку</button>
-        <h6>Эксперементальные функции</h6>
-        <button id="DelAll">Удалить всё</button>
-        <button id="Test">Добавить элементов </button>
-        </br>
-        <!-- <input id="filterInput" type="text"></input> -->
-        <!-- <a>cap</a>
-        <pre id="cap">
-        </pre> -->
-
-        <table>
-            <tr>
-                <h5>Локальное хранилище</h5>
-            </tr>
-            <tr>
-                <td>Вывод, отображено 20 последних элементов:</td>
-            </tr>
-        </table>
-        <pre id="disSearch">
-            </pre>
-        <!-- <a>Вывод 20 элементов:</a>
-        <pre id="displayInPre">
-            </pre> -->
-    </body>
     <link rel="stylesheet" href="javascript/styles.css">
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
     <script src="JavaScript/inn.js"></script>
-    <script src="JavaScript/body.js"></script>
-    <script src="JavaScript/barcode.js"></script>
+    <!-- <script src="JavaScript/body.js"></script> -->
+    <!-- <script src="JavaScript/barcode.js"></script> -->
     <script src="JavaScript/insert.js"></script>
     <script src="JavaScript/del.js"></script>
     <script src="JavaScript/delall.js"></script>
@@ -60,6 +16,53 @@
     <script src="JavaScript/firebaseRead.js"></script>
     <!-- <script src="JavaScript/uppdate.js"></script> -->
     <script src="JavaScript/UppDateDeleteAll.js"></script>
+
+
+
+    <table>
+        <div class="container">
+            <td>Количество элементов localStorage:
+                <span id="localStorage.length"></span>
+            </td>
+
+            <td>Количество элементов Firebase:
+                <span id="Firebase"></span>
+            </td>
+        </div>
+    </table>
+
+    <body>
+        <div class="container">
+            <h4>Формат данных: EAN INN Price Name</h4>
+            <h5>Пример: 34601234567890 3905782799 300.0 Курочка</h5>
+            <br>
+            >
+            <input placeholder="Поиск и ввод..." id="box" type="text"></input>
+
+            <button id="insert">Ввод</button>
+            <button id="Del">Удалить строку</button>
+            <button id="FB">Запись Firebace</button>
+
+            <h6>Эксперементальные функции</h6>
+            <button id="DelAll">Удалить всё</button>
+            <button id="Test">Добавить 100 элементов </button>
+            </br>
+
+            <table>
+                <tr>
+                    <h5>Локальное хранилище</h5>
+                </tr>
+                <tr>
+                    <td>Вывод, отображено 20 последних элементов:</td>
+                </tr>
+            </table>
+            <pre id="disSearch">
+            </pre>
+            <!-- <a>Вывод 20 элементов:</a>
+        <pre id="displayInPre">
+            </pre> -->
+        </div>
+    </body>
     <script>
         document.getElementById('insert').onclick = function () {
             box.addEventListener("keyup", Search);
@@ -81,12 +84,14 @@
         box.addEventListener("keyup", Search);
     </script>
     <table>
-        <tr>
-            <h5>Firebase хранилище</h5>
-        </tr>
-        <tr>
-            <td>Вывод, отображено X последних элементов:</td>
-        </tr>
+        <div class="container">
+            <tr>
+                <h5>Firebase хранилище</h5>
+            </tr>
+            <tr>
+                <td>Вывод, отображено X последних элементов:</td>
+            </tr>
+        </div>
     </table>
 
 

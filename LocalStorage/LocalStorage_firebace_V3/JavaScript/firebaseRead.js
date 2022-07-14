@@ -35,11 +35,11 @@ function FirebaseRead() {
                   iFirebase +
                   "\t EAN: " +
                   formatJSON.EAN +
-                  "\t EAN: " +
+                  "\t INN: " +
                   formatJSON.INN +
-                  "\t EAN: " +
+                  "\t Price: " +
                   formatJSON.Price +
-                  "\t EAN: " +
+                  "\t Name: " +
                   formatJSON.Name +
                   "\t User: " +
                   formatJSON.tele +
@@ -47,19 +47,6 @@ function FirebaseRead() {
               iFirebase++;
 
               document.getElementById("Firebase").innerHTML = iFirebase;
-
-              // disSearch +=
-              //   "\t" +
-              //   numbSearch +
-              //   "\t EAN: " +
-              //   formatJSON.EAN +
-              //   "\t INN: " +
-              //   formatJSON.INN +
-              //   "\t Цена: " +
-              //   formatJSON.Price +
-              //   "\t Название: " +
-              //   PasureJSON.Name +
-              //   "\n";
             });
           });
         });

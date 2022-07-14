@@ -2,7 +2,6 @@ function Insert() {
   box = document.getElementById("box").value;
 
   let arr = box.split(" ");
-  console.log(arr[0]);
 
   var ean = arr[0];
   var inn = arr[1];

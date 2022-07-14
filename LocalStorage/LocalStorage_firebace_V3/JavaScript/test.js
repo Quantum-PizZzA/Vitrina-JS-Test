@@ -37,13 +37,13 @@ function Test20elements() {
     } else {
       // WScript.Echo(i, " ean!!! ", checkEAN(i));
       valueJSONtest = {
-        EAN: i + 1,
+        EAN: i + 10,
         INN: Math.floor(Math.random() * (maxinn - mininn + 1)) + mininn,
         Price:
           Math.floor(Math.random() * (maxPrice - minPrice + 10)) + minPrice,
         Name: word,
-        Date: Date.now(),
-        Date2: new Date()
+        Date: Date.now()
+        // Date2: new Date()
       };
     }
 

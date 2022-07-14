@@ -26,18 +26,6 @@ function UppDate() {
     }
   }
 
-  // {
-  //   for (let i = 0; i < localStorage.length; i++) {
-  //     let key = localStorage.key(i);
-
-  //     displayInPre +=
-  //       localStorage.key(i) +
-  //       "\t" +
-  //       localStorage.getItem(localStorage.key(i)) +
-  //       "\n";
-  //   }
-  // }
-
   // вывод 20 элементов
   document.getElementById("displayInPre").innerHTML = displayInPre;
   // количества ls
