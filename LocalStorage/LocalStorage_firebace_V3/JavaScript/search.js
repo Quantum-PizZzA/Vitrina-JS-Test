@@ -1,15 +1,31 @@
 let disSearch = " \n";
 
 function Search() {
-  valueSearch = document.getElementById("box").value.toUpperCase();
+  // box = document.getElementById("box").value.toUpperCase();
 
-  console.log("function Search");
+  // console.log("function Search");
 
   numbSearch = 0;
   disSearch = "";
 
   for (let i = 0; i < localStorage.length && numbSearch < 20; i++) {
     let array = localStorage.getItem(localStorage.key(i));
+    let arr4j = array.split(" ");
+
+    let ean = arr4j[0];
+    let inn = arr4j[1];
+    let price = arr4j[2];
+    let name = arr4j[3];
+
+    valueJSON = {
+      EAN: ean,
+      INN: inn,
+      Price: price,
+      Name: name,
+      Date: Date.now()
+    };
+
+    console.log(valueJSON);
 
     if (array.toUpperCase().indexOf(valueSearch) > -1) {
       PasureJSON = JSON.parse(localStorage.getItem(localStorage.key(i)));
