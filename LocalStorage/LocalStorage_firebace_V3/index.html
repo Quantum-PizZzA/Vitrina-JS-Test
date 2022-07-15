@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>localStorage - Firebase</title>
+
+        <link rel="stylesheet" href="styles.css">
+
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+        <script src="JavaScript/inn.js"></script>
+        <!-- <script src="JavaScript/body.js"></script> -->
+        <!-- <script src="JavaScript/barcode.js"></script> -->
+        <script src="JavaScript/insert.js"></script>
+        <script src="JavaScript/del.js"></script>
+        <script src="JavaScript/delall.js"></script>
+        <script src="JavaScript/test.js"></script>
+        <script src="JavaScript/search.js"></script>
+        <script src="JavaScript/firebaseWrite.js"></script>
+        <script src="JavaScript/firebaseRead.js"></script>
+        <!-- <script src="JavaScript/uppdate.js"></script> -->
+        <script src="JavaScript/UppDateDeleteAll.js"></script>
+        <script src="JavaScript/WriteFile.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            Количество элементов localStorage:
+            <span id="localStorage.length"></span>
+            <br>
+
+            Количество элементов Firebase:
+            <span id="Firebase"></span>
+
+            <h4>Формат данных: EAN INN Price Name</h4>
+            <h5>Пример: 34601234567890 3905782799 300.0 Курочка</h5>
+            <br>
+            >
+            <input placeholder="Поиск и ввод..." id="box" type="text">
+
+            <button id="insert">Ввод</button>
+            <button id="Del">Удалить строку</button>
+            <button id="FB">Запись Firebace</button>
+
+            <h6>Эксперементальные функции</h6>
+            <button id="DelAll">Удалить всё</button>
+            <button id="Test">Добавить 100 элементов </button>
+            <button id="download">Download</button>
+
+            <div>
+                <h5>Локальное хранилище</h5>
+                <h6>Вывод, отображено 20 последних элементов:</h6>
+            </div>
+            <pre id="disSearch">
+            </pre>
+            <!-- <a>Вывод 20 элементов:</a>
+        <pre id="displayInPre">
+            </pre> -->
+        </div>
+
+        <script>
+            document.getElementById('insert').onclick = function () {
+                box.addEventListener("keyup", Search);
+                Insert();
+                Search();
+            }
+            document.getElementById('Del').onclick = function () {
+                Del();
+                Search();
+            }
+            document.getElementById('DelAll').onclick = function () {
+                DelAll();
+                UppDateDeleteAll();
+            }
+            document.getElementById('Test').onclick = function () {
+                Test20elements();
+                Search();
+            }
+
+            document.getElementById('download').onclick = function () {
+                WriteFile();
+            }
+
+            box.addEventListener("keyup", Search);
+
+        </script>
+        <div class="container">
+            <h5>Firebase хранилище</h5>
+            <h6>Вывод, отображено X последних элементов:</h6>
+        </div>
+
+
+        <script>
+
+            FirebaseRead();
+        // FirebaseWrite();
+        </script>
+    </body>
+
+</html>
