@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
     <head>
         <title>localStorage - Firebase</title>
@@ -58,38 +58,38 @@
         <pre id="displayInPre">
             </pre> -->
         </div>
-    </body>
-    <script>
-        document.getElementById('insert').onclick = function () {
+
+        <script>
+            document.getElementById('insert').onclick = function () {
+                box.addEventListener("keyup", Search);
+                Insert();
+                Search();
+            }
+            document.getElementById('Del').onclick = function () {
+                Del();
+                Search();
+            }
+            document.getElementById('DelAll').onclick = function () {
+                DelAll();
+                UppDateDeleteAll();
+            }
+            document.getElementById('Test').onclick = function () {
+                Test20elements();
+                Search();
+            }
             box.addEventListener("keyup", Search);
-            Insert();
-            Search();
-        }
-        document.getElementById('Del').onclick = function () {
-            Del();
-            Search();
-        }
-        document.getElementById('DelAll').onclick = function () {
-            DelAll();
-            UppDateDeleteAll();
-        }
-        document.getElementById('Test').onclick = function () {
-            Test20elements();
-            Search();
-        }
-        box.addEventListener("keyup", Search);
-    </script>
-    <div class="container">
-        <h5>Firebase хранилище</h5>
-        <h6>Вывод, отображено X последних элементов:</h6>
-    </div>
-    </div>
+        </script>
+        <div class="container">
+            <h5>Firebase хранилище</h5>
+            <h6>Вывод, отображено X последних элементов:</h6>
+        </div>
 
 
-    <script>
+        <script>
 
-        FirebaseRead();
+            FirebaseRead();
         // FirebaseWrite();
-    </script>
+        </script>
+    </body>
 
 </html>
