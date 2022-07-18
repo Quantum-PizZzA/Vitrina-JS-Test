@@ -10,12 +10,14 @@ function ReadFile() {
   linesValue = [];
 
   reader.onload = function () {
-    let lines = reader.result.split(";");
+    console.log(reader);
 
-    // console.log(lines);
+    let lines = reader.result.split("\n");
+
+    console.log(lines);
 
     for (i = 0; i < lines.length; i++) {
-      Arr = lines[i].split(":");
+      Arr = lines[i].split(";");
 
       linesValue.key = Arr[0];
       linesValue.ean = Arr[1];
@@ -23,24 +25,24 @@ function ReadFile() {
       linesValue.price = Arr[3];
       linesValue.name = Arr[4];
 
-      if (
-        linesValue.key != "" &&
-        linesValue.key != " " &&
-        linesValue.key != "\n" &&
-        linesValue.key != "\t"
-      ) {
-        localStorage.setItem(
-          linesValue.key,
-          linesValue.ean +
-            " " +
-            linesValue.inn +
-            " " +
-            linesValue.price +
-            " " +
-            linesValue.name
-        );
-        console.log("Загружено:", linesValue);
-      }
+      // if (
+      //   linesValue.key != "" &&
+      //   linesValue.key != " " &&
+      //   linesValue.key != "\n" &&
+      //   linesValue.key != "\t"
+      // ) {
+      localStorage.setItem(
+        Number(linesValue.key),
+        linesValue.ean +
+          " " +
+          linesValue.inn +
+          " " +
+          linesValue.price +
+          " " +
+          linesValue.name
+      );
+      // console.log("Загружено:", linesValue);
+      // }
     }
   };
 }

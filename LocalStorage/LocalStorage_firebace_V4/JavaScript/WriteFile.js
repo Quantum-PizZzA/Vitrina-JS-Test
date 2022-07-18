@@ -11,15 +11,15 @@ function WriteFile() {
 
     arrayFile +=
       localStorage.key(i) +
-      ":" +
+      ";" +
       ean +
-      ":" +
+      ";" +
       inn +
-      ":" +
+      ";" +
       price +
-      ":" +
+      ";" +
       name +
-      "; \n";
+      "\r\n";
   }
 
   save =
