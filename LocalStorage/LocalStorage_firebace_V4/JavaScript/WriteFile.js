@@ -1,5 +1,5 @@
 function WriteFile() {
-  arrayFile = "";
+  arrayFile = "time;ean;inn;price;name\r\n";
   for (let i = 0; i < localStorage.length; i++) {
     renferfind = localStorage.getItem(localStorage.key(i));
     let arr = renferfind.split(" ");
