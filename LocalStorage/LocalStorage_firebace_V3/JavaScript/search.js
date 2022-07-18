@@ -23,8 +23,6 @@ function Search() {
       disSearch +=
         "\t" +
         numbSearch +
-        //".\t" +
-        //localStorage.key(i) +
         "\t EAN: " +
         PasureJSON.EAN +
         "\t INN: " +
