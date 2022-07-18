@@ -10,11 +10,9 @@ function ReadFile() {
   linesValue = [];
 
   reader.onload = function () {
-    console.log(reader);
+    // console.log(reader);
 
     let lines = reader.result.split("\n");
-
-    console.log(lines);
 
     for (i = 0; i < lines.length; i++) {
       Arr = lines[i].split(";");
@@ -25,16 +23,20 @@ function ReadFile() {
       linesValue.price = Arr[3];
       linesValue.name = Arr[4];
 
-      localStorage.setItem(
-        Number(linesValue.key),
-        linesValue.ean +
-          " " +
-          linesValue.inn +
-          " " +
-          linesValue.price +
-          " " +
-          linesValue.name
-      );
+      if (String(Number(linesValue.key)) != "NaN") {
+        console.log("Запись", Number(linesValue.key));
+
+        localStorage.setItem(
+          Number(linesValue.key),
+          linesValue.ean +
+            " " +
+            linesValue.inn +
+            " " +
+            linesValue.price +
+            " " +
+            linesValue.name
+        );
+      }
     }
   };
 }
