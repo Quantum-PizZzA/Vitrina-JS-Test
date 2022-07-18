@@ -25,12 +25,6 @@ function ReadFile() {
       linesValue.price = Arr[3];
       linesValue.name = Arr[4];
 
-      // if (
-      //   linesValue.key != "" &&
-      //   linesValue.key != " " &&
-      //   linesValue.key != "\n" &&
-      //   linesValue.key != "\t"
-      // ) {
       localStorage.setItem(
         Number(linesValue.key),
         linesValue.ean +
@@ -41,8 +35,6 @@ function ReadFile() {
           " " +
           linesValue.name
       );
-      // console.log("Загружено:", linesValue);
-      // }
     }
   };
 }
