@@ -34,34 +34,3 @@ function WriteFileJSON() {
     "} '>download localStorage.json</a>";
   document.write(save);
 }
-
-// function WriteFile() {
-//   arrayFile = "time;ean;inn;price;name\\r\\n";
-//   for (let i = 0; i < localStorage.length; i++) {
-//     renferfind = localStorage.getItem(localStorage.key(i));
-//     let arr = renferfind.split(" ");
-
-//     let ean = arr[0];
-//     let inn = arr[1];
-//     let price = arr[2];
-//     let name = arr[3];
-
-//     arrayFile +=
-//       localStorage.key(i) +
-//       ";" +
-//       ean +
-//       ";" +
-//       inn +
-//       ";" +
-//       price +
-//       ";" +
-//       name +
-//       "\\r\\n";
-//   }
-
-//   save =
-//     "<a download='localStorage.txt' href='data:application/octet-stream;UTF-8," +
-//     arrayFile +
-//     "'>download localStorage.txt</a>";
-//   document.write(save);
-// }
