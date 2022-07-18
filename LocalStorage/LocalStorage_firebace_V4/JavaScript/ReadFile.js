@@ -8,17 +8,9 @@ function ReadFileJSON() {
   reader.onload = function () {
     obj = JSON.parse(reader.result);
 
-    console.log(reader.result);
-    console.log(reader);
-    console.log(obj);
-
     for (key in obj) {
-      console.log(key, obj[key]);
-      /* ... делать что-то с obj[key] ... */
+      // console.log(key, obj[key]);
+      localStorage.setItem(key, JSON.stringify(obj[key]));
     }
-
-    // console.log(obj[1658125448586].INN);
-
-    // localStorage.setItem("key", obj);
   };
 }
