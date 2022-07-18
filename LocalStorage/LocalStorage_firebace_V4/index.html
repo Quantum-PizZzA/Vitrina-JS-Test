@@ -16,6 +16,7 @@
         <script src="JavaScript/del.js"></script>
         <script src="JavaScript/delall.js"></script>
         <script src="JavaScript/test.js"></script>
+        <script src="JavaScript/test2.js"></script>
         <script src="JavaScript/search.js"></script>
         <script src="JavaScript/firebaseWrite.js"></script>
         <script src="JavaScript/firebaseRead.js"></script>
@@ -51,6 +52,7 @@
             <h6>Эксперементальные функции</h6>
             <button id="DelAll">Удалить всё</button>
             <button id="Test">Добавить 100 элементов </button>
+            <button id="Test2">Добавить реальные элементы</button>
 
             <h6>Новые функции</h6>
             <button id="download">Download</button>
@@ -82,6 +84,11 @@
             }
             document.getElementById('Test').onclick = function () {
                 Test20elements();
+                Search();
+            }
+
+            document.getElementById('Test2').onclick = function () {
+                Test2_0();
                 Search();
             }
 
