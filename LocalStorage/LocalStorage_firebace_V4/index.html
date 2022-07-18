@@ -30,7 +30,7 @@
     <body>
 
         <div class="container">
-            <div>Версия: 0.4.1</div>
+            <div>Версия: 0.4.3</div>
             Количество элементов localStorage:
             <span id="localStorage.length"></span>
             <br>
@@ -86,12 +86,12 @@
             }
 
             document.getElementById('download').onclick = function () {
-                WriteFile();
+                WriteFileJSON();
             }
 
             box.addEventListener("keyup", Search);
 
-            document.querySelector("#read").addEventListener("click", function Text() { ReadFile() });
+            document.querySelector("#read").addEventListener("click", function Text() { ReadFileJSON() });
 
         </script>
         <div class="container">
