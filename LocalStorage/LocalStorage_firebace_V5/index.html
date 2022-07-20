@@ -31,6 +31,11 @@
     <body>
 
         <div class="container">
+            <div>
+                <button id="download">Download</button>
+                <input type="file" id="file">
+                <button id="read">Чтение файла</button>
+            </div>
             <!-- <div>Версия: 0.4.7</div>
             Количество элементов localStorage:
             <span id="localStorage.length"></span>
@@ -54,17 +59,16 @@
             <button id="Test">Добавить 100 элементов </button>
             <button id="Test2">Добавить реальные элементы</button>
 
-            <h6>Новые функции</h6>
-            <button id="download">Download</button>
+            <h6>Новые функции</h6> -->
 
-            <input type="file" id="file">
-            <button id="read">Чтение файла</button>
 
-            <div>
+
+
+            <!-- <div>
                 <h5>Локальное хранилище</h5>
                 <h6>Вывод, отображено 20 последних элементов:</h6> -->
-        </div>
-        <pre id="disSearch">
+            <!-- </div> -->
+            <pre id="disSearch">
             </pre>
         </div>
 
@@ -92,11 +96,11 @@
             //     Search();
             // }
 
-            // document.getElementById('download').onclick = function () {
-            //     WriteFileJSON();
-            // }
+            document.getElementById('download').onclick = function () {
+                WriteFileJSON();
+            }
 
-            // document.querySelector("#read").addEventListener("click", function Text() { ReadFileJSON() });
+            document.querySelector("#read").addEventListener("click", function Text() { ReadFileJSON() });
 
         </script>
         <!-- <div class="container">
