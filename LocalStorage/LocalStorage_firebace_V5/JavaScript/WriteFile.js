@@ -10,16 +10,21 @@ function WriteFileJSON() {
     let price = arr[2];
     let name = arr[3];
 
+    for (f = 4; f < arr.length; f++) {
+      if (arr[f] != undefined) {
+        name += "%20" + arr[f];
+      }
+    }
+
     valueJSON = {
       EAN: ean,
       INN: inn,
       Price: price,
-      Name: name
+      Name: name,
     };
     obj[localStorage.key(i)] = valueJSON;
   }
 
-  console.log(JSON.stringify(obj));
   save =
     "<a download='localStorage.json' href='data:application/octet-stream;UTF-8," +
     JSON.stringify(obj) +
