@@ -21,6 +21,12 @@ function Search() {
       let price = arr[2];
       let name = arr[3];
 
+      for (f = 4; f < arr.length; f++) {
+        if (arr[f] != undefined) {
+          name += " " + arr[f];
+        }
+      }
+
       valueJSON = {
         EAN: ean,
         INN: inn,
