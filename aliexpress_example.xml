@@ -8,6 +8,8 @@
 		    <category id="11" parentId="1">Электролобзики</category>
 	    </categories>
 	    <offers>
+
+
 		    <offer id="4356" group_id="1">
 			    <price>2380</price>
 			    <discount_price>2000</discount_price>
@@ -34,8 +36,13 @@
           <gtin>123456789</gtin>
           <okpd2>1234</okpd2>
           <lot_num>2</lot_num>
+		  <tnved>2227</tnved>
+		  <param name="Бренд">СК</param>
 			    <quantity>10</quantity>
 		    </offer>
+
+
+		
 		    <offer id="4920" group_id="1">
 			    <price>3150</price>
 			    <discount_price>3000</discount_price>
