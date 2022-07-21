@@ -75,6 +75,8 @@
          <gtin>123456789</gtin>
          <okpd2>1234</okpd2>
          <lot_num>2</lot_num>
+		 <tnved>2227</tnved>
+		 <param name="Бренд">СК</param>
 		    </offer>
 	    </offers>
     </shop>
