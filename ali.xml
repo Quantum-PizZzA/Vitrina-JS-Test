@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yml_catalog date="07-21-2022">
+    <shop>
+      <categories>
+        <!-- Категории -->
+        <category id="1212" parentId="1313">Датчик</category>
+    ...
+      </categories>
+	    <offers>
+		    <!-- Товары -->
+		    <offer id="1111" group_id="111">
+          <!-- Информация о товаре -->
+          <price>6990</price>
+          <discount_price>5990</discount_price>
+          <categoryId>1212</categoryId>
+          <picture>http://avito.ru/autoload/1/items-to-feed/images?imageSlug=/image/1/1.OqF1SbaxlkhD_hRFDWU8z6vqlkzJ6JxK.lM7YeCvkEmw9Mv-AYtT-vsqOlX7bZCgmYDaZ56aFP88</picture>
+          <picture>http://avito.ru/autoload/1/items-to-feed/images?imageSlug=/image/1/1.wORfiLaxbA1pP-4AU6PGioErbAnjKWYP.Cu8SyFXXF8q9bvQ8858pix16ueEN7ydascGwBcO6G-w</picture>
+          <name>Датчик endress hauser FMI21-A1A1C1</name>
+          
+          <description>Б/У Датчик endress hauser FMI21-A1A1C1</description>
+          <weight>240</weight>
+          <length>180</length>
+          <width>60</width>
+          <height>30</height>
+          <quantity>5</quantity>
+          <param name="Category">Игры, приставки и программы</param>
+          <param name="Category2">Датчики</param>
+          ...
+          <barcode>2449741492</barcode>
+          <!-- Для объединения вариаций -->
+          <!-- <cus_skucolor>...<cus_skucolor> -->
+          <!-- <size>...</size> -->
+			    <!-- <sku_code>...</sku_code> -->
+        </offer>
+        <offer id="222">
+        ...
+		    </offer>
+        ...
+ 	    </offers>
+    </shop>
+</yml_catalog>
