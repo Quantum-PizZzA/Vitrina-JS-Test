@@ -2,10 +2,11 @@
 <yml_catalog date="2022-06-27T14:37:38+03:00">
     <shop>
         <categories>
-		    <category id="1">Электроинструмент</category>
+			<category id="202000004">Электрика</category>
+		    <!-- <category id="1">Электроинструмент</category>
 		    <category id="10" parentId="1">Дрели</category>
 		    <category id="20" parentId="10">Безударные дрели</category>
-		    <category id="11" parentId="1">Электролобзики</category>
+		    <category id="11" parentId="1">Электролобзики</category> -->
 	    </categories>
 	    <offers>
 
@@ -15,10 +16,10 @@
 			    <discount_price>2000</discount_price>
 			    <categoryId>20</categoryId>
 			    <picture>
-			    http://www.super-tools.ru/u/images/products/8c/8cc3d54bb471729c9851b3b005542d69037f9b5c.jpg
+			    http://avito.ru/autoload/1/items-to-feed/images?imageSlug=/image/1/1.OqF1SbaxlkhD_hRFDWU8z6vqlkzJ6JxK.lM7YeCvkEmw9Mv-AYtT-vsqOlX7bZCgmYDaZ56aFP88
 			    </picture>
 			    <picture>
-			    http://www.super-tools.ru/u/images/products/df/df8941e1649662f7549f6d7a6a5d6ddbc75dbc1c.jpg
+			    http://avito.ru/autoload/1/items-to-feed/images?imageSlug=/image/1/1.wORfiLaxbA1pP-4AU6PGioErbAnjKWYP.Cu8SyFXXF8q9bvQ8858pix16ueEN7ydascGwBcO6G-w
 			    </picture>
 			    <name>Дрель ДЭ-380ЭР/10 (50067)</name>
 			    <description>
@@ -31,59 +32,14 @@
 			    <height>40</height>
 			    <weight>3</weight>
           <size>4</size>
-          <cus_skucolor>Красный</cus_skucolor>
-          <sku_picture>http://www.super-tools.ru/u/images/products/df/df8941e1649662f7549f6d7a6a5d6ddbc75dbc1c.jpg</sku_picture>
+          <cus_skucolor>Синий</cus_skucolor>
+          <sku_picture>https://71.img.avito.st/image/1/1.OqF1SbaxlkhD_hRFDWU8z6vqlkzJ6JxK.lM7YeCvkEmw9Mv-AYtT-vsqOlX7bZCgmYDaZ56aFP88.JPG</sku_picture>
           <gtin>123456789</gtin>
           <okpd2>1234</okpd2>
           <lot_num>2</lot_num>
 		  <tnved>2227</tnved>
 		  <param name="Бренд">СК</param>
 			    <quantity>10</quantity>
-		    </offer>
-
-
-		
-		    <offer id="4920" group_id="1">
-			    <price>3150</price>
-			    <discount_price>3000</discount_price>
-			    <categoryId>11</categoryId>
-			    <picture>
-			    http://www.super-tools.ru/u/images/products/df/df8fd152acf9e3fe31197858f0dc67685f95180e.jpg
-			    </picture>
-			    <picture>
-			    http://www.super-tools.ru/u/images/products/aa/aa939378f3bfc337a919f088cdb52a768d2237b3.jpg
-			    </picture>
-			    <picture>
-			    http://www.super-tools.ru/u/images/products/37/3765e80fb737dfdaef1fcce5bdab7688166e2df1.jpg
-			    </picture>
-			    <picture>
-			    http://www.super-tools.ru/u/images/products/ac/ac3a8102cc9c999692ce1ce54e12d4885dde1529.jpg
-			    </picture>
-			    <picture>
-			    http://www.super-tools.ru/u/images/products/44/44bb059d06c9a2383f4079a8a84d098ebe1cd382.jpg
-			    </picture>
-			    <picture>
-			    http://www.super-tools.ru/u/images/products/7e/7e29ed58b976c796ae2c1275d61dbd5c5dfd59bf.jpg
-			    </picture>
-			    <name>Лобзик ЛЭ-600/60Э (50220)</name>
-			    <description>
-                    <![CDATA[
-                        <p>Лобзик ЛЭ-600/60Э – недорогой инструмент для выполнения прямых и фигурных распилов заготовок из древесины (толщиной до 60 мм), металла (толщиной до 8 мм) и пр. Модель имеет возможность плавной регулировки частоты ходов пилки от 500 до 2800 ход.мин., что важно, когда пользователь работает с различным материалом и меняет оснастку. Для установки нужных оборотов на корпусе расположено регулировочное колёсико. Опорная платформа может быть зафиксирована под углом 45 градусов (вправо или влево). Таким образом, можно выполнять наклонный пропил.</p><p>Компактные размеры лобзика и небольшой вес позволят работать даже продолжительное время без ощущения дискомфорта. Удобство использования обеспечивает ещё и противовес увеличенного размера для снижения уровня вибрации.Комплект поставки включает:</p><ul><li>Параллельный упор для работы вдоль края заготовки;</li><li>Прозрачный защитный экран, установленный перед оснасткой;</li><li>Адаптер для подключения пылесоса;</li><li>Шестигранник для замены пилок лобзика.</li></ul>
-		            	]]>
-			    </description>
-			   <length>50</length>
-			   <width>30</width>
-			   <height>30</height>
-			   <weight>1</weight>
-         <size>4</size>
-         <cus_skucolor>Красный</cus_skucolor>
-         <sku_picture>http://www.super-tools.ru/u/images/products/df/df8941e1649662f7549f6d7a6a5d6ddbc75dbc1c.jpg</sku_picture>
-			   <quantity>20</quantity>
-         <gtin>123456789</gtin>
-         <okpd2>1234</okpd2>
-         <lot_num>2</lot_num>
-		 <tnved>2227</tnved>
-		 <param name="Бренд">СК</param>
 		    </offer>
 	    </offers>
     </shop>
