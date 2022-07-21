@@ -23,8 +23,15 @@
           <width>60</width>
           <height>30</height>
           <quantity>5</quantity>
-          <param name="Category">Игры, приставки и программы</param>
-          <param name="Category2">Датчики</param>
+
+          <param name="Цвет">Датчики</param>
+          <param name="Бренд">СК</param>
+          <param name="ТН ВЭД">ТН ВЭД</param>
+          <param name="Количество в лоте">3</param>
+          <param name="ОКПД2">ОКПД2</param>
+          <param name="Изображение цвета">Черный цвет</param>
+          <param name="GTIN">GTIN</param>
+          <param name="Размер">XXL</param>
           ...
           <barcode>2449741492</barcode>
           <!-- Для объединения вариаций -->
